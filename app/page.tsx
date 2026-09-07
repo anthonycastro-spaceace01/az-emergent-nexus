@@ -35,7 +35,6 @@ export default async function HomePage() {
         </Link>
         <div className="nav-meta">
           <span className="nav-status">Systems online</span>
-          <Link className="cart-link" href="/cart">Cart / 00</Link>
         </div>
       </nav>
 

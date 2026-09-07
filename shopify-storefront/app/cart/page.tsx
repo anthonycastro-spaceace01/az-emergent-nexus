@@ -7,25 +7,23 @@ export default async function CartPage() {
 
   if (!cart || cart.lines.nodes.length === 0) {
     return (
-      <main style={{ maxWidth: 960, margin: "0 auto", padding: "2rem" }}>
-        <h1>Your Cart</h1>
-        <p>Your cart is empty.</p>
-        <Link href="/">Continue Shopping</Link>
-      </main>
+      <div className="site-shell">
+        <nav className="site-nav"><a className="brand" href="/"><span className="brand-mark"><span>+</span></span><span className="brand-name">Nexus / 01</span></a><a className="cart-link" href="/cart">Cart / 00</a></nav>
+        <main className="cart-page"><span className="section-label">Cart / empty signal</span><h1 className="cart-title">Nothing queued.</h1><p className="cart-copy">Your next system is waiting.</p><Link className="primary-link" href="/">Return to systems</Link></main>
+      </div>
     );
   }
 
   return (
-    <main style={{ maxWidth: 960, margin: "0 auto", padding: "2rem" }}>
-      <h1>Your Cart</h1>
-      <table style={{ width: "100%", borderCollapse: "collapse" }}>
+    <div className="site-shell">
+      <nav className="site-nav"><a className="brand" href="/"><span className="brand-mark"><span>+</span></span><span className="brand-name">Nexus / 01</span></a><a className="cart-link" href="/cart">Cart / {String(cart.totalQuantity).padStart(2, "0")}</a></nav>
+      <main className="cart-page">
+      <span className="section-label">Cart / review transmission</span>
+      <h1 className="cart-title">Your systems.</h1>
+      <div className="cart-table-wrap"><table className="cart-table">
         <thead>
-          <tr style={{ borderBottom: "1px solid #ccc", textAlign: "left" }}>
-            <th style={{ padding: "0.5rem" }}>Product</th>
-            <th style={{ padding: "0.5rem" }}>Price</th>
-            <th style={{ padding: "0.5rem" }}>Quantity</th>
-            <th style={{ padding: "0.5rem" }}>Total</th>
-            <th style={{ padding: "0.5rem" }}></th>
+          <tr>
+            <th>Product</th><th>Price</th><th>Quantity</th><th>Total</th><th></th>
           </tr>
         </thead>
         <tbody>
@@ -33,33 +31,27 @@ export default async function CartPage() {
             <CartLineItem key={line.id} line={line} />
           ))}
         </tbody>
-      </table>
+      </table></div>
 
-      <div style={{ marginTop: "2rem", textAlign: "right" }}>
-        <p>
+      <div className="cart-summary">
+        <p className="cart-subtotal">
           <strong>
             Subtotal: ${parseFloat(cart.cost.subtotalAmount.amount).toFixed(2)}{" "}
             {cart.cost.subtotalAmount.currencyCode}
           </strong>
         </p>
         <a
+          className="primary-link"
           href={cart.checkoutUrl}
-          style={{
-            display: "inline-block",
-            marginTop: "1rem",
-            padding: "0.75rem 1.5rem",
-            background: "#000",
-            color: "#fff",
-            textDecoration: "none",
-          }}
         >
-          Proceed to Checkout
+          Proceed / Checkout
         </a>
       </div>
 
-      <p style={{ marginTop: "1rem" }}>
+      <p className="cart-return">
         <Link href="/">Continue Shopping</Link>
       </p>
-    </main>
+      </main>
+    </div>
   );
 }

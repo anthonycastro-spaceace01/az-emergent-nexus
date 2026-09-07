@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Shopify Storefront",
+  title: "NEXUS / Cognitive Systems",
+  description: "Two browser-based systems for exploring how you think and experience the world.",
 };
 
 export default function RootLayout({
@@ -11,24 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body style={{ fontFamily: "system-ui, sans-serif", margin: 0 }}>
-        <nav
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            padding: "1rem 2rem",
-            borderBottom: "1px solid #eee",
-          }}
-        >
-          <a href="/" style={{ textDecoration: "none", fontWeight: "bold" }}>
-            Store
-          </a>
-          <a href="/cart" style={{ textDecoration: "none" }}>
-            Cart
-          </a>
-        </nav>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

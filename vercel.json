@@ -1,0 +1,6 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "cd shopify-storefront && npm run build",
+  "installCommand": "cd shopify-storefront && npm install",
+  "outputDirectory": "shopify-storefront/.next"
+}

@@ -19,7 +19,7 @@ export function AddToCartButton({
   }
 
   return (
-    <button onClick={handleClick} disabled={!availableForSale || isPending}>
+    <button className="add-button" onClick={handleClick} disabled={!availableForSale || isPending}>
       {!availableForSale ? "Sold Out" : isPending ? "Adding..." : "Add to Cart"}
     </button>
   );

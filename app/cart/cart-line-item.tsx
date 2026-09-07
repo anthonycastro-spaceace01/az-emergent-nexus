@@ -24,18 +24,20 @@ export function CartLineItem({ line }: { line: CartLine }) {
   }
 
   return (
-    <tr style={{ borderBottom: "1px solid #eee", opacity: isPending ? 0.5 : 1 }}>
-      <td style={{ padding: "0.5rem" }}>
+    <tr className="cart-row" style={{ opacity: isPending ? 0.5 : 1 }}>
+      <td className="cart-product">
         {line.merchandise.product.title}
         {line.merchandise.title !== "Default Title" && (
-          <span style={{ color: "#666" }}> — {line.merchandise.title}</span>
+          <span className="cart-variant"> — {line.merchandise.title}</span>
         )}
       </td>
-      <td style={{ padding: "0.5rem" }}>
+      <td className="cart-cell">
         ${parseFloat(line.merchandise.price.amount).toFixed(2)}
       </td>
-      <td style={{ padding: "0.5rem" }}>
+      <td className="cart-cell">
+        <div className="quantity-control">
         <button
+          className="quantity-button"
           onClick={() => handleUpdateQuantity(line.quantity - 1)}
           disabled={isPending}
         >
@@ -48,12 +50,13 @@ export function CartLineItem({ line }: { line: CartLine }) {
         >
           +
         </button>
+        </div>
       </td>
-      <td style={{ padding: "0.5rem" }}>
+      <td className="cart-cell cart-total">
         ${parseFloat(line.cost.totalAmount.amount).toFixed(2)}
       </td>
-      <td style={{ padding: "0.5rem" }}>
-        <button onClick={handleRemove} disabled={isPending}>
+      <td className="cart-cell">
+        <button className="remove-button" onClick={handleRemove} disabled={isPending}>
           Remove
         </button>
       </td>

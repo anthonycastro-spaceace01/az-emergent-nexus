@@ -11,6 +11,7 @@ const experienceLinks = [
   "https://quadram-i-n-d-s-sight.vercel.app/",
   "https://mind-forge-2-0.vercel.app/",
 ];
+const substackLink = "https://substack.com/@anthonycastro33";
 
 export default async function HomePage() {
   let products: Product[] = [];
@@ -28,9 +29,9 @@ export default async function HomePage() {
   return (
     <div className="site-shell">
       <nav className="site-nav">
-        <Link className="brand" href="/" aria-label="Nexus home">
+        <Link className="brand" href="/" aria-label="AZ Emergent Nexus home">
           <span className="brand-mark"><span>+</span></span>
-          <span className="brand-name">Nexus / 01</span>
+          <span className="brand-name">AZ Emergent Nexus</span>
         </Link>
         <div className="nav-meta">
           <span className="nav-status">Systems online</span>
@@ -40,6 +41,21 @@ export default async function HomePage() {
 
       <main>
         <section className="hero">
+          <a className="hero-portal" href={substackLink} rel="noreferrer" target="_blank" aria-label="Enter the AZ Emergent Nexus Substack portal">
+            <span className="portal-glow" />
+            <span className="sigil-ring sigil-ring-outer" />
+            <span className="sigil-ring sigil-ring-middle" />
+            <span className="sigil-ring sigil-ring-inner" />
+            <span className="sigil-cross sigil-cross-horizontal" />
+            <span className="sigil-cross sigil-cross-vertical" />
+            <span className="sigil-diamond" />
+            <span className="sigil-core">&#x2299;</span>
+            <span className="sigil-binary sigil-binary-top">101&nbsp;001&nbsp;011</span>
+            <span className="sigil-binary sigil-binary-bottom">010&nbsp;110&nbsp;101</span>
+            <span className="sigil-glyph sigil-glyph-left">&#x2641;</span>
+            <span className="sigil-glyph sigil-glyph-right">&#x2642;</span>
+            <span className="portal-label">Enter / Substack</span>
+          </a>
           <div className="hero-copy">
             <p className="kicker">Shop / browser-based experiences</p>
             <h1>Choose your next<br /><span className="hero-highlight">experience.</span></h1>
@@ -78,7 +94,7 @@ export default async function HomePage() {
                 target="_blank"
               >
                 <span>Experience / {String(index + 1).padStart(2, "0")}</span>
-                <strong>{index === 0 ? "Quadram" : "Mind Forge"}</strong>
+                <strong>{index === 0 ? "QUADRAM.I.N.D.Sight." : "Mind Forge"}</strong>
                 <em>Open experience</em>
               </a>
             ))}
@@ -136,7 +152,7 @@ export default async function HomePage() {
           )}
         </section>
       </main>
-      <footer className="site-footer">Nexus / Cognitive systems for the next version of you</footer>
+      <footer className="site-footer">AZ Emergent Nexus / Cognitive systems for the next version of you</footer>
     </div>
   );
 }

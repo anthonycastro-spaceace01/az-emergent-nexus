@@ -8,7 +8,7 @@ export default async function CartPage() {
   if (!cart || cart.lines.nodes.length === 0) {
     return (
       <div className="site-shell">
-        <nav className="site-nav"><Link className="brand" href="/"><span className="brand-mark"><span>+</span></span><span className="brand-name">Nexus / 01</span></Link><Link className="cart-link" href="/cart">Cart / 00</Link></nav>
+        <nav className="site-nav"><Link className="brand" href="/" aria-label="AZ Emergent Nexus home"><span className="brand-mark"><span>+</span></span><span className="brand-name">AZ Emergent Nexus</span></Link><Link className="cart-link" href="/cart">Cart / 00</Link></nav>
         <main className="cart-page"><span className="section-label">Cart / empty signal</span><h1 className="cart-title">Nothing queued.</h1><p className="cart-copy">Your next system is waiting.</p><Link className="primary-link" href="/">Return to systems</Link></main>
       </div>
     );
@@ -16,7 +16,7 @@ export default async function CartPage() {
 
   return (
     <div className="site-shell">
-      <nav className="site-nav"><Link className="brand" href="/"><span className="brand-mark"><span>+</span></span><span className="brand-name">Nexus / 01</span></Link><Link className="cart-link" href="/cart">Cart / {String(cart.totalQuantity).padStart(2, "0")}</Link></nav>
+      <nav className="site-nav"><Link className="brand" href="/" aria-label="AZ Emergent Nexus home"><span className="brand-mark"><span>+</span></span><span className="brand-name">AZ Emergent Nexus</span></Link><Link className="cart-link" href="/cart">Cart / {String(cart.totalQuantity).padStart(2, "0")}</Link></nav>
       <main className="cart-page">
       <span className="section-label">Cart / review transmission</span>
       <h1 className="cart-title">Your systems.</h1>

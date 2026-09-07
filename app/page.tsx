@@ -41,29 +41,29 @@ export default async function HomePage() {
       <main>
         <section className="hero">
           <div className="hero-copy">
-            <p className="kicker">Private instruments for public reality</p>
-            <h1>Think deeper.<br /><span className="hero-highlight">See further.</span></h1>
+            <p className="kicker">Shop / browser-based experiences</p>
+            <h1>Choose your next<br /><span className="hero-highlight">experience.</span></h1>
             <p className="hero-lede">
-              Two guided systems for the moments when ordinary reflection is not enough. Find your highest-performing mind, then explore the dimensions beneath it.
+              Buy access through Shopify, then open the digital experience built for the way you think, create, and see the world.
             </p>
             <div className="hero-actions">
-              <a className="primary-link" href="#systems">Enter the systems</a>
-              <a className="secondary-link" href="#access">How access works</a>
+              <a className="primary-link" href="#systems">Shop experiences</a>
+              <a className="secondary-link" href="#access">How it works</a>
             </div>
           </div>
         </section>
 
         <div className="signal-strip" id="access">
-          <div className="signal"><strong>01 / Browser-native</strong><span>Open each experience directly in your browser.</span></div>
-          <div className="signal"><strong>02 / AI-facilitated</strong><span>Prompts and dialogue that respond to the shape of your thinking.</span></div>
-          <div className="signal"><strong>03 / Self-directed</strong><span>Move at your own pace through structured, repeatable sessions.</span></div>
+          <div className="signal"><strong>01 / Choose</strong><span>Find the experience that matches your current line of inquiry.</span></div>
+          <div className="signal"><strong>02 / Purchase</strong><span>Complete checkout securely through Shopify.</span></div>
+          <div className="signal"><strong>03 / Enter</strong><span>Open your browser-based experience and begin.</span></div>
         </div>
 
         <section className="section" id="systems">
           <div className="section-heading">
             <div>
-              <span className="section-label">Choose your instrument</span>
-              <h2 className="section-title">Available systems.</h2>
+              <span className="section-label">Shop the collection</span>
+              <h2 className="section-title">Available experiences.</h2>
             </div>
             <p className="section-note">Purchase through Shopify, then open the experience linked to your product.</p>
           </div>

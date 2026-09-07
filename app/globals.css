@@ -105,6 +105,8 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(3.5rem, 8vw, 7.6rem); let
 .add-button { background: var(--red); border: 0; color: #fff; cursor: pointer; font-family: 'DM Mono', monospace; font-size: 11px; min-height: 44px; padding: 0 16px; text-transform: uppercase; }
 .add-button:hover { background: #ff6b5d; }
 .add-button:disabled { background: #49404c; color: #aaa2b6; cursor: not-allowed; }
+.experience-link { color: var(--violet); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .04em; margin-top: 18px; text-decoration: none; text-transform: uppercase; }
+.experience-link:hover { color: var(--gold-bright); }
 
 .signal-strip { border-bottom: 1px solid var(--line); border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(3, 1fr); margin: 0 auto 96px; max-width: 1240px; }
 .signal { border-right: 1px solid var(--line); padding: 24px 32px; }

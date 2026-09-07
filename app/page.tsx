@@ -7,6 +7,11 @@ import { AddToCartButton } from "./add-to-cart-button";
 
 export const dynamic = "force-dynamic";
 
+const experienceLinks = [
+  "https://quadram-i-n-d-s-sight.vercel.app/",
+  "https://mind-forge-2-0.vercel.app/",
+];
+
 export default async function HomePage() {
   let products: Product[] = [];
 
@@ -49,7 +54,7 @@ export default async function HomePage() {
         </section>
 
         <div className="signal-strip" id="access">
-          <div className="signal"><strong>01 / Browser-native</strong><span>No download. Your guidebook opens the experience instantly.</span></div>
+          <div className="signal"><strong>01 / Browser-native</strong><span>Open each experience directly in your browser.</span></div>
           <div className="signal"><strong>02 / AI-facilitated</strong><span>Prompts and dialogue that respond to the shape of your thinking.</span></div>
           <div className="signal"><strong>03 / Self-directed</strong><span>Move at your own pace through structured, repeatable sessions.</span></div>
         </div>
@@ -60,7 +65,7 @@ export default async function HomePage() {
               <span className="section-label">Choose your instrument</span>
               <h2 className="section-title">Available systems.</h2>
             </div>
-            <p className="section-note">Your purchase includes the guidebook and QR access to the browser-based experience.</p>
+            <p className="section-note">Purchase through Shopify, then open the experience linked to your product.</p>
           </div>
 
           {products.length === 0 ? (
@@ -98,6 +103,16 @@ export default async function HomePage() {
                         />
                       )}
                     </div>
+                    {experienceLinks[index] && (
+                      <a
+                        className="experience-link"
+                        href={experienceLinks[index]}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        Open experience
+                      </a>
+                    )}
                   </div>
                 </article>
               ))}

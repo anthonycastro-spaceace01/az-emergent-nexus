@@ -68,6 +68,22 @@ export default async function HomePage() {
             <p className="section-note">Purchase through Shopify, then open the experience linked to your product.</p>
           </div>
 
+          <div className="experience-destinations" aria-label="Experience links">
+            {experienceLinks.map((link, index) => (
+              <a
+                className="experience-destination"
+                href={link}
+                key={link}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <span>Experience / {String(index + 1).padStart(2, "0")}</span>
+                <strong>{index === 0 ? "Quadram" : "Mind Forge"}</strong>
+                <em>Open experience</em>
+              </a>
+            ))}
+          </div>
+
           {products.length === 0 ? (
             <div className="empty-state">No systems are currently available.</div>
           ) : (

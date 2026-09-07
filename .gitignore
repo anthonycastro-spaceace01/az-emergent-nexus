@@ -1,4 +1,15 @@
+<<<<<<< HEAD
+/node_modules
+/.next
+/out
+/build
+next-env.d.ts
+.env*.local
+.DS_Store
+*.tsbuildinfo
+=======
 node_modules/
 .next/
 .env*
 !.env.example
+>>>>>>> origin/main

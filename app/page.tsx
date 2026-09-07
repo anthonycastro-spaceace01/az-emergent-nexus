@@ -4,6 +4,8 @@ import { PRODUCTS_QUERY } from "@/lib/shopify-queries";
 import type { Product } from "@/lib/shopify-types";
 import { AddToCartButton } from "./add-to-cart-button";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   const data = await shopifyFetch<{ products: { nodes: Product[] } }>(
     PRODUCTS_QUERY,

@@ -8,12 +8,17 @@ import { AddToCartButton } from "./add-to-cart-button";
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
-  const data = await shopifyFetch<{ products: { nodes: Product[] } }>(
-    PRODUCTS_QUERY,
-    { first: 12 }
-  );
+  let products: Product[] = [];
 
-  const products = data.products.nodes;
+  try {
+    const data = await shopifyFetch<{ products: { nodes: Product[] } }>(
+      PRODUCTS_QUERY,
+      { first: 12 }
+    );
+    products = data.products.nodes;
+  } catch (error) {
+    console.error("Unable to load Shopify products", error);
+  }
 
   return (
     <div className="site-shell">

@@ -7,23 +7,47 @@ import { AddToCartButton } from "./add-to-cart-button";
 
 export const dynamic = "force-dynamic";
 
+const hasShopifyConfiguration = Boolean(
+  process.env.SHOPIFY_STORE_DOMAIN?.trim() &&
+    process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN?.trim()
+);
+
 const experienceLinks = [
   "https://quadram-i-n-d-s-sight.vercel.app/",
   "https://mind-forge-2-0.vercel.app/",
 ];
 const substackLink = "https://substack.com/@anthonycastro33";
+const cryptoApps = [
+  {
+    name: "HyperCross Nexus",
+    description: "Core intelligence and strategy: analyze markets, portfolios, blockchain activity, DeFi, liquidity, risk, and trade setups through an explainable decision process.",
+    href: "https://hypercrossfinancial.online",
+  },
+  {
+    name: "HyperCross Nexus Arm Xero",
+    description: "The optional execution companion that prepares or executes approved strategies with authorization, position limits, routing, and transaction-level risk controls.",
+    href: "https://hypercrosscrypto.com",
+  },
+  {
+    name: "Ameterasu HCN Companion",
+    description: "The conversational interface for understanding Nexus analysis, portfolio exposure, signals, opportunities, and risk without acting as an autonomous trading engine.",
+    href: "https://hypercross-nexus-arm-01.vercel.app/",
+  },
+];
 
 export default async function HomePage() {
   let products: Product[] = [];
 
-  try {
-    const data = await shopifyFetch<{ products: { nodes: Product[] } }>(
-      PRODUCTS_QUERY,
-      { first: 100 }
-    );
-    products = data.products.nodes;
-  } catch (error) {
-    console.error("Unable to load Shopify products", error);
+  if (hasShopifyConfiguration) {
+    try {
+      const data = await shopifyFetch<{ products: { nodes: Product[] } }>(
+        PRODUCTS_QUERY,
+        { first: 100 }
+      );
+      products = data.products.nodes;
+    } catch (error) {
+      console.error("Unable to load Shopify products", error);
+    }
   }
 
   return (
@@ -63,6 +87,7 @@ export default async function HomePage() {
             </p>
             <div className="hero-actions">
               <a className="primary-link" href="#systems">Shop experiences</a>
+              <a className="secondary-link" href="#hypercross">Explore HyperCross</a>
               <a className="secondary-link" href="#access">How it works</a>
             </div>
           </div>
@@ -149,6 +174,31 @@ export default async function HomePage() {
               ))}
             </div>
           )}
+        </section>
+
+        <section className="section crypto-apps" id="hypercross">
+          <div className="section-heading">
+            <div>
+              <span className="section-label">Crypto application suite</span>
+              <h2 className="section-title">HyperCross.</h2>
+            </div>
+            <p className="section-note">Three linked surfaces for navigating and executing your HyperCross workflows.</p>
+          </div>
+
+          <div className="crypto-app-grid" aria-label="HyperCross application links">
+            {cryptoApps.map((app, index) => (
+              <article className="crypto-app" key={app.name}>
+                <span className="product-index">App / {String(index + 1).padStart(2, "0")}</span>
+                <h3>{app.name}</h3>
+                <p>{app.description}</p>
+                {app.href ? (
+                  <a href={app.href} rel="noreferrer" target="_blank">Launch app</a>
+                ) : (
+                  <span className="crypto-app-pending">Launch link pending</span>
+                )}
+              </article>
+            ))}
+          </div>
         </section>
       </main>
       <footer className="site-footer">AZ Emergent Nexus / Cognitive systems for the next version of you</footer>

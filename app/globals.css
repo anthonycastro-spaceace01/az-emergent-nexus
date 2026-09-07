@@ -116,6 +116,16 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(3.5rem, 8vw, 7.6rem); let
 .experience-destination span, .experience-destination em { color: var(--gold); font-family: 'DM Mono', monospace; font-size: 10px; font-style: normal; letter-spacing: .12em; text-transform: uppercase; }
 .experience-destination strong { font-family: 'Syne', sans-serif; font-size: 1.5rem; }
 .experience-destination em { color: var(--violet); margin-top: 8px; }
+.crypto-apps { padding-top: 0; }
+.crypto-app-grid { display: grid; gap: 12px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 28px; }
+.crypto-app { background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; min-height: 280px; padding: 26px; position: relative; }
+.crypto-app::before { background: linear-gradient(135deg, rgba(168,117,255,.16), transparent 42%), radial-gradient(circle at 90% 10%, rgba(231,184,75,.15), transparent 25%); content: ''; inset: 0; pointer-events: none; position: absolute; }
+.crypto-app > * { position: relative; }
+.crypto-app h3 { font-family: 'Syne', sans-serif; font-size: 1.8rem; letter-spacing: -.04em; line-height: 1.05; margin: 18px 0 12px; }
+.crypto-app p { color: var(--muted); line-height: 1.55; margin: 0; }
+.crypto-app a, .crypto-app-pending { color: var(--gold); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .08em; margin-top: auto; padding-top: 28px; text-decoration: none; text-transform: uppercase; }
+.crypto-app a:hover { color: var(--gold-bright); }
+.crypto-app-pending { color: var(--muted); }
 .product-grid { display: grid; gap: 20px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 42px; }
 .product-card { background: var(--surface); border: 1px solid var(--line); min-height: 540px; overflow: hidden; padding: 12px; position: relative; }
 .product-card::before { content: ''; inset: 0; opacity: .65; pointer-events: none; position: absolute; }
@@ -178,6 +188,7 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(3.5rem, 8vw, 7.6rem); let
   .section-heading { align-items: start; flex-direction: column; gap: 8px; }
   .section-note { text-align: left; }
   .experience-destinations { grid-template-columns: 1fr; }
+  .crypto-app-grid { grid-template-columns: 1fr; }
   .product-grid { grid-template-columns: 1fr; }
   .product-card { min-height: 0; }
   .cart-page { padding-left: 20px; padding-right: 20px; padding-top: 70px; }

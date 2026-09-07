@@ -88,6 +88,7 @@ export default async function HomePage() {
             <div className="hero-actions">
               <a className="primary-link" href="#systems">Shop experiences</a>
               <a className="secondary-link" href="#hypercross">Explore HyperCross</a>
+              <a className="secondary-link" href="#quadraseer">Explore QuadraSeer</a>
               <a className="secondary-link" href="#access">How it works</a>
             </div>
           </div>
@@ -199,6 +200,37 @@ export default async function HomePage() {
               </article>
             ))}
           </div>
+        </section>
+
+        <section className="section quadraseer" id="quadraseer">
+          <div className="section-heading">
+            <div>
+              <span className="section-label">Axiom Zeta control layer</span>
+              <h2 className="section-title">QuadraSeer.</h2>
+            </div>
+            <p className="section-note">Operating intelligence that coordinates the ecosystem around every task.</p>
+          </div>
+
+          <article className="quadraseer-panel">
+            <div className="quadraseer-copy">
+              <span className="product-index">Orchestrate / route / govern</span>
+              <h3>The system around the intelligence.</h3>
+              <p>
+                QuadraSeer coordinates AI tools, applications, policies, workflows, knowledge sources, and local computational resources through one unified control surface.
+              </p>
+              <p>
+                It determines the right model, service, or hardware for each task while enforcing permissions, resource limits, and safety boundaries across HRM, PhaseLock, Sovereign Vault, and specialized applications.
+              </p>
+              <span className="quadraseer-pending">Access node pending</span>
+            </div>
+            <div className="quadraseer-map" aria-hidden="true">
+              <span className="quadraseer-core">Quadra<br />Seer</span>
+              <span className="quadraseer-node quadraseer-node-hrm">HRM</span>
+              <span className="quadraseer-node quadraseer-node-phase">PhaseLock</span>
+              <span className="quadraseer-node quadraseer-node-vault">Sovereign Vault</span>
+              <span className="quadraseer-node quadraseer-node-local">Local Compute</span>
+            </div>
+          </article>
         </section>
       </main>
       <footer className="site-footer">AZ Emergent Nexus / Cognitive systems for the next version of you</footer>

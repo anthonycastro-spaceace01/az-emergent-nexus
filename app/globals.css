@@ -126,6 +126,23 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(3.5rem, 8vw, 7.6rem); let
 .crypto-app a, .crypto-app-pending { color: var(--gold); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .08em; margin-top: auto; padding-top: 28px; text-decoration: none; text-transform: uppercase; }
 .crypto-app a:hover { color: var(--gold-bright); }
 .crypto-app-pending { color: var(--muted); }
+.quadraseer { padding-top: 0; }
+.quadraseer-panel { background: var(--surface); border: 1px solid var(--line); display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(360px, .9fr); margin-top: 28px; min-height: 400px; overflow: hidden; }
+.quadraseer-copy { padding: 42px; }
+.quadraseer-copy h3 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -.05em; line-height: 1; margin: 18px 0; max-width: 620px; }
+.quadraseer-copy p { color: var(--muted); line-height: 1.65; margin: 0 0 16px; max-width: 650px; }
+.quadraseer-pending { color: var(--gold); display: inline-block; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .1em; margin-top: 20px; text-transform: uppercase; }
+.quadraseer-map { background: radial-gradient(circle at center, rgba(168,117,255,.22), transparent 28%), linear-gradient(rgba(245,240,230,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(245,240,230,.06) 1px, transparent 1px); background-size: auto, 36px 36px, 36px 36px; min-height: 400px; position: relative; }
+.quadraseer-map::before, .quadraseer-map::after { border: 1px solid rgba(231,184,75,.36); content: ''; height: 58%; left: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%) rotate(45deg); width: 58%; }
+.quadraseer-map::after { border-color: rgba(168,117,255,.5); height: 28%; width: 28%; }
+.quadraseer-core, .quadraseer-node { align-items: center; background: var(--surface-raised); border: 1px solid var(--line); display: flex; font-family: 'DM Mono', monospace; font-size: 10px; justify-content: center; letter-spacing: .07em; position: absolute; text-align: center; text-transform: uppercase; z-index: 1; }
+.quadraseer-core { border-color: var(--gold); color: var(--gold-bright); height: 96px; left: 50%; line-height: 1.4; top: 50%; transform: translate(-50%, -50%); width: 96px; }
+.quadraseer-core br { display: block; }
+.quadraseer-node { color: var(--ink); min-height: 34px; padding: 0 10px; }
+.quadraseer-node-hrm { left: 16%; top: 18%; }
+.quadraseer-node-phase { right: 12%; top: 25%; }
+.quadraseer-node-vault { bottom: 18%; right: 17%; }
+.quadraseer-node-local { bottom: 24%; left: 11%; }
 .product-grid { display: grid; gap: 20px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 42px; }
 .product-card { background: var(--surface); border: 1px solid var(--line); min-height: 540px; overflow: hidden; padding: 12px; position: relative; }
 .product-card::before { content: ''; inset: 0; opacity: .65; pointer-events: none; position: absolute; }
@@ -189,6 +206,9 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(3.5rem, 8vw, 7.6rem); let
   .section-note { text-align: left; }
   .experience-destinations { grid-template-columns: 1fr; }
   .crypto-app-grid { grid-template-columns: 1fr; }
+  .quadraseer-panel { grid-template-columns: 1fr; }
+  .quadraseer-copy { padding: 28px 24px; }
+  .quadraseer-map { min-height: 310px; }
   .product-grid { grid-template-columns: 1fr; }
   .product-card { min-height: 0; }
   .cart-page { padding-left: 20px; padding-right: 20px; padding-top: 70px; }

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { shopifyFetch } from "@/lib/shopify";
 import { PRODUCTS_QUERY } from "@/lib/shopify-queries";
 import type { Product } from "@/lib/shopify-types";
@@ -17,13 +18,13 @@ export default async function HomePage() {
   return (
     <div className="site-shell">
       <nav className="site-nav">
-        <a className="brand" href="/" aria-label="Nexus home">
+        <Link className="brand" href="/" aria-label="Nexus home">
           <span className="brand-mark"><span>+</span></span>
           <span className="brand-name">Nexus / 01</span>
-        </a>
+        </Link>
         <div className="nav-meta">
           <span className="nav-status">Systems online</span>
-          <a className="cart-link" href="/cart">Cart / 00</a>
+          <Link className="cart-link" href="/cart">Cart / 00</Link>
         </div>
       </nav>
 

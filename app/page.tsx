@@ -40,7 +40,7 @@ export default async function HomePage() {
 
       <main>
         <section className="hero">
-          <a className="hero-portal" href={substackLink} rel="noreferrer" target="_blank" aria-label="Enter the AZ Emergent Nexus Substack portal">
+          <a className="hero-portal" href={substackLink} rel="noreferrer" target="_blank" aria-label="Enter The Singularity Point">
             <span className="portal-glow" />
             <span className="sigil-ring sigil-ring-outer" />
             <span className="sigil-ring sigil-ring-middle" />
@@ -53,7 +53,7 @@ export default async function HomePage() {
             <span className="sigil-binary sigil-binary-bottom">010&nbsp;110&nbsp;101</span>
             <span className="sigil-glyph sigil-glyph-left">&#x2641;</span>
             <span className="sigil-glyph sigil-glyph-right">&#x2642;</span>
-            <span className="portal-label">Enter / Substack</span>
+            <span className="portal-label">The Singularity Point</span>
           </a>
           <div className="hero-copy">
             <p className="kicker">Shop / browser-based experiences</p>

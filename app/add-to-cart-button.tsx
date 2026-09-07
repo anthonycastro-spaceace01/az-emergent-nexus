@@ -14,13 +14,14 @@ export function AddToCartButton({
 
   function handleClick() {
     startTransition(async () => {
-      await addToCart(variantId);
+      const cart = await addToCart(variantId);
+      window.location.assign(cart.checkoutUrl);
     });
   }
 
   return (
     <button className="add-button" onClick={handleClick} disabled={!availableForSale || isPending}>
-      {!availableForSale ? "Sold Out" : isPending ? "Adding..." : "Add to Cart"}
+      {!availableForSale ? "Sold Out" : isPending ? "Opening checkout..." : "Buy access"}
     </button>
   );
 }

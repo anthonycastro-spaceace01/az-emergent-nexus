@@ -13,7 +13,7 @@ export default async function HomePage() {
   try {
     const data = await shopifyFetch<{ products: { nodes: Product[] } }>(
       PRODUCTS_QUERY,
-      { first: 12 }
+      { first: 100 }
     );
     products = data.products.nodes;
   } catch (error) {
@@ -58,7 +58,7 @@ export default async function HomePage() {
           <div className="section-heading">
             <div>
               <span className="section-label">Choose your instrument</span>
-              <h2 className="section-title">Two ways in.</h2>
+              <h2 className="section-title">Available systems.</h2>
             </div>
             <p className="section-note">Your purchase includes the guidebook and QR access to the browser-based experience.</p>
           </div>
@@ -67,7 +67,7 @@ export default async function HomePage() {
             <div className="empty-state">No systems are currently available.</div>
           ) : (
             <div className="product-grid">
-              {products.slice(0, 2).map((product, index) => (
+              {products.map((product, index) => (
                 <article className="product-card" key={product.id}>
                   <div className="product-visual">
                     {product.featuredImage ? (
@@ -85,9 +85,7 @@ export default async function HomePage() {
                     <span className="product-index">System / {String(index + 1).padStart(2, "0")}</span>
                     <h3 className="product-title">{product.title}</h3>
                     <p className="product-description">
-                      {index === 0
-                        ? "Extract the conditions where your knowledge, creativity, logic, intuition, and experience converge."
-                        : "Explore perception, memory, bodily awareness, and future-oriented thought through guided sessions."}
+                      {product.description || "Explore this system through a guided browser-based experience."}
                     </p>
                     <div className="product-bottom">
                       <span className="price">

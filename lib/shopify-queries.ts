@@ -1,6 +1,6 @@
 export const PRODUCTS_QUERY = `
   query Products($first: Int!) {
-    products(first: $first) {
+    products(first: $first, sortKey: TITLE) {
       nodes {
         id
         title

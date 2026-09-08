@@ -38,6 +38,11 @@ const experiences = [
     playStoreHref: "https://play.google.com/store/search?q=QuadraSeer&c=apps",
   },
 ];
+
+const googlePlayOnlyExperiences = new Set([
+  "EqualiF.I. Financial Planner",
+  "QuadraSeer",
+]);
 const substackLink = "https://substack.com/@anthonycastro33";
 const cryptoApps = [
   {
@@ -135,22 +140,26 @@ export default async function HomePage() {
                 <strong>{exp.name}</strong>
                 <em className="experience-subtitle">{exp.subtitle}</em>
                 <div className="experience-actions">
-                  <a
-                    className="current-members-button"
-                    href={exp.href}
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    Current Members
-                  </a>
-                  <a
-                    className="new-members-button"
-                    href={exp.href}
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    New Members
-                  </a>
+                  {!googlePlayOnlyExperiences.has(exp.name) && (
+                    <>
+                      <a
+                        className="current-members-button"
+                        href={exp.href}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        Current Members
+                      </a>
+                      <a
+                        className="new-members-button"
+                        href={exp.href}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        New Members
+                      </a>
+                    </>
+                  )}
                   <a
                     className="play-store-button"
                     href={exp.playStoreHref}
@@ -222,22 +231,35 @@ export default async function HomePage() {
                       </div>
                       {experiences[index] && (
                         <div className="experience-actions">
-                          <a
-                            className="current-members-button"
-                            href={experiences[index].href}
-                            rel="noreferrer"
-                            target="_blank"
-                          >
-                            Current Members
-                          </a>
-                          <a
-                            className="new-members-button"
-                            href={experiences[index].href}
-                            rel="noreferrer"
-                            target="_blank"
-                          >
-                            New Members
-                          </a>
+                          {!googlePlayOnlyExperiences.has(experiences[index].name) ? (
+                            <>
+                              <a
+                                className="current-members-button"
+                                href={experiences[index].href}
+                                rel="noreferrer"
+                                target="_blank"
+                              >
+                                Current Members
+                              </a>
+                              <a
+                                className="new-members-button"
+                                href={experiences[index].href}
+                                rel="noreferrer"
+                                target="_blank"
+                              >
+                                New Members
+                              </a>
+                            </>
+                          ) : (
+                            <a
+                              className="play-store-button"
+                              href={experiences[index].playStoreHref}
+                              rel="noreferrer"
+                              target="_blank"
+                            >
+                              Download on Google Play
+                            </a>
+                          )}
                         </div>
                       )}
                     </div>
@@ -273,7 +295,7 @@ export default async function HomePage() {
           <div className="section-heading">
             <div>
               <span className="section-label">Axiom Zeta control layer</span>
-              <h2 className="section-title">QuadraSeer.</h2>
+              <h2 className="section-title">QuadraMatrixA.I.</h2>
             </div>
             <p className="section-note">Operating intelligence that coordinates the ecosystem around every task.</p>
           </div>
@@ -283,7 +305,7 @@ export default async function HomePage() {
               <span className="product-index">Orchestrate / route / govern</span>
               <h3>The system around the intelligence.</h3>
               <p>
-                QuadraSeer coordinates AI tools, applications, policies, workflows, knowledge sources, and local computational resources through one unified control surface.
+                QuadraMatrixA.I. coordinates AI tools, applications, policies, workflows, knowledge sources, and local computational resources through one unified control surface.
               </p>
               <p>
                 It determines the right model, service, or hardware for each task while enforcing permissions, resource limits, and safety boundaries across HRM, PhaseLock, Sovereign Vault, and specialized applications.
@@ -291,7 +313,7 @@ export default async function HomePage() {
               <span className="quadraseer-pending">Access node pending</span>
             </div>
             <div className="quadraseer-map" aria-hidden="true">
-              <span className="quadraseer-core">Quadra<br />Seer</span>
+              <span className="quadraseer-core">Quadra<br />Matrix</span>
               <span className="quadraseer-node quadraseer-node-hrm">HRM</span>
               <span className="quadraseer-node quadraseer-node-phase">PhaseLock</span>
               <span className="quadraseer-node quadraseer-node-vault">Sovereign Vault</span>

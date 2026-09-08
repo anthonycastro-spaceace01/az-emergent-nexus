@@ -25,6 +25,24 @@ const experiences = [
     href: "https://mind-forge-2-0.vercel.app/",
     playStoreHref: "https://play.google.com/store/search?q=Convergence%20Form%20Extractor&c=apps",
   },
+  {
+    name: "EqualiF.I. Financial Planner",
+    subtitle: "Personal finance intelligence",
+    href: "https://play.google.com/store/apps/details?id=com.financial.advisor.ai",
+    playStoreHref: "https://play.google.com/store/apps/details?id=com.financial.advisor.ai",
+  },
+  {
+    name: "Axiom and Ash",
+    subtitle: "Cyber Scribe Forge",
+    href: "https://www.transcendentalprescience.com",
+    playStoreHref: "https://play.google.com/store/search?q=Axiom%20and%20Ash%20Cyber%20Scribe%20Forge&c=apps",
+  },
+  {
+    name: "QuadraSeer",
+    subtitle: "Axiom Zeta control layer",
+    href: "https://play.google.com/store/search?q=QuadraSeer&c=apps",
+    playStoreHref: "https://play.google.com/store/search?q=QuadraSeer&c=apps",
+  },
 ];
 const substackLink = "https://substack.com/@anthonycastro33";
 const cryptoApps = [
@@ -175,9 +193,7 @@ export default async function HomePage() {
           </a>
 
           <div id="product-catalog">
-            {products.length === 0 ? (
-              <div className="empty-state">No systems are currently available.</div>
-            ) : (
+            {products.length > 0 && (
               <div className="product-grid">
                 {products.map((product, index) => (
                   <article className="product-card" id={`product-card-${index}`} key={product.id}>

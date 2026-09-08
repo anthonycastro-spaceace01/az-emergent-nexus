@@ -119,8 +119,8 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(3.5rem, 8vw, 7.6rem); let
 .featured-experience { background: var(--surface); border: 1px solid var(--line); display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(260px, .85fr); margin-top: 12px; text-decoration: none; transition: border-color .2s ease, background .2s ease; }
 .featured-experience:hover { background: var(--surface-raised); border-color: var(--gold); }
 .featured-experience-image { min-height: 280px; overflow: hidden; position: relative; }
-.featured-experience-image img { object-fit: cover; transition: transform .5s ease; }
-.featured-experience:hover .featured-experience-image img { transform: scale(1.03); }
+.featured-experience-image img { object-fit: contain; transition: transform .5s ease; }
+.featured-experience:hover .featured-experience-image img { transform: scale(1.02); }
 .featured-experience-copy { display: flex; flex-direction: column; justify-content: center; padding: 32px; }
 .featured-experience-copy h3 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 3vw, 3rem); letter-spacing: -.05em; line-height: 1; margin: 16px 0 12px; }
 .featured-experience-copy p { color: var(--muted); line-height: 1.5; margin: 0; }

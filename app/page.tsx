@@ -12,9 +12,17 @@ const hasShopifyConfiguration = Boolean(
     process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN?.trim()
 );
 
-const experienceLinks = [
-  "https://quadram-i-n-d-s-sight.vercel.app/",
-  "https://mind-forge-2-0.vercel.app/",
+const experiences = [
+  {
+    name: "QUADRAMINDS",
+    subtitle: "QUADRAM.I.N.D.Sight.",
+    href: "https://quadram-i-n-d-s-sight.vercel.app/",
+  },
+  {
+    name: "CONVERGENCE FORM EXTRACTOR",
+    subtitle: "Mind Forge 2.0",
+    href: "https://mind-forge-2-0.vercel.app/",
+  },
 ];
 const substackLink = "https://substack.com/@anthonycastro33";
 const cryptoApps = [
@@ -110,18 +118,20 @@ export default async function HomePage() {
           </div>
 
           <div className="experience-destinations" aria-label="Experience links">
-            {experienceLinks.map((link, index) => (
-              <a
-                className="experience-destination"
-                href={link}
-                key={link}
-                rel="noreferrer"
-                target="_blank"
-              >
+            {experiences.map((exp, index) => (
+              <div className="experience-destination" key={exp.name}>
                 <span>Experience / {String(index + 1).padStart(2, "0")}</span>
-                <strong>{index === 0 ? "QUADRAM.I.N.D.Sight." : "Mind Forge"}</strong>
-                <em>Open experience</em>
-              </a>
+                <strong>{exp.name}</strong>
+                <em className="experience-subtitle">{exp.subtitle}</em>
+                <a
+                  className="current-members-button"
+                  href={exp.href}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Current Members
+                </a>
+              </div>
             ))}
           </div>
 
@@ -160,14 +170,14 @@ export default async function HomePage() {
                         />
                       )}
                     </div>
-                    {experienceLinks[index] && (
+                    {experiences[index] && (
                       <a
-                        className="experience-link"
-                        href={experienceLinks[index]}
+                        className="current-members-button"
+                        href={experiences[index].href}
                         rel="noreferrer"
                         target="_blank"
                       >
-                        Open experience
+                        Current Members
                       </a>
                     )}
                   </div>

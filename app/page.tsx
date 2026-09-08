@@ -134,7 +134,9 @@ export default async function HomePage() {
                   </a>
                   <a
                     className="new-members-button"
-                    href={products.length > index ? `#product-card-${index}` : "#product-catalog"}
+                    href={exp.href}
+                    rel="noreferrer"
+                    target="_blank"
                   >
                     New Members
                   </a>
@@ -191,7 +193,9 @@ export default async function HomePage() {
                           </a>
                           <a
                             className="new-members-button"
-                            href="#access"
+                            href={experiences[index].href}
+                            rel="noreferrer"
+                            target="_blank"
                           >
                             New Members
                           </a>

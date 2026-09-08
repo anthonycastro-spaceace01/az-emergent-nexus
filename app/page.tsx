@@ -17,11 +17,13 @@ const experiences = [
     name: "QUADRAMINDS",
     subtitle: "QUADRAM.I.N.D.Sight.",
     href: "https://quadram-i-n-d-s-sight.vercel.app/",
+    playStoreHref: "https://play.google.com/store/search?q=QUADRAMINDS&c=apps",
   },
   {
     name: "CONVERGENCE FORM EXTRACTOR",
     subtitle: "Mind Forge 2.0",
     href: "https://mind-forge-2-0.vercel.app/",
+    playStoreHref: "https://play.google.com/store/search?q=Convergence%20Form%20Extractor&c=apps",
   },
 ];
 const substackLink = "https://substack.com/@anthonycastro33";
@@ -29,17 +31,14 @@ const cryptoApps = [
   {
     name: "HyperCross Nexus",
     description: "Core intelligence and strategy: analyze markets, portfolios, blockchain activity, DeFi, liquidity, risk, and trade setups through an explainable decision process.",
-    href: "https://hypercrossfinancial.online",
   },
   {
     name: "HyperCross Nexus Arm Xero",
     description: "The optional execution companion that prepares or executes approved strategies with authorization, position limits, routing, and transaction-level risk controls.",
-    href: "https://hypercrosscrypto.com",
   },
   {
     name: "Ameterasu HCN Companion",
     description: "The conversational interface for understanding Nexus analysis, portfolio exposure, signals, opportunities, and risk without acting as an autonomous trading engine.",
-    href: "https://hypercross-nexus-arm-01.vercel.app/",
   },
 ];
 
@@ -91,7 +90,7 @@ export default async function HomePage() {
             <p className="kicker">Shop / browser-based experiences</p>
             <h1>Choose your next<br /><span className="hero-highlight">experience.</span></h1>
             <p className="hero-lede">
-              Buy access through Shopify, then open the digital experience built for the way you think, create, and see the world.
+              Open the digital experience built for the way you think, create, and see the world.
             </p>
             <div className="hero-actions">
               <a className="primary-link" href="#systems">Shop experiences</a>
@@ -104,7 +103,7 @@ export default async function HomePage() {
 
         <div className="signal-strip" id="access">
           <div className="signal"><strong>01 / Choose</strong><span>Find the experience that matches your current line of inquiry.</span></div>
-          <div className="signal"><strong>02 / Purchase</strong><span>Complete checkout securely through Shopify.</span></div>
+          <div className="signal"><strong>02 / Access</strong><span>Enter the experience and begin your next line of inquiry.</span></div>
           <div className="signal"><strong>03 / Enter</strong><span>Open your browser-based experience and begin.</span></div>
         </div>
 
@@ -114,7 +113,7 @@ export default async function HomePage() {
               <span className="section-label">Shop the collection</span>
               <h2 className="section-title">Available experiences.</h2>
             </div>
-            <p className="section-note">Purchase through Shopify, then open the experience linked to your product.</p>
+            <p className="section-note">Explore the experience linked to each system.</p>
           </div>
 
           <div className="experience-destinations" aria-label="Experience links">
@@ -140,10 +139,40 @@ export default async function HomePage() {
                   >
                     New Members
                   </a>
+                  <a
+                    className="play-store-button"
+                    href={exp.playStoreHref}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    Download on Google Play
+                  </a>
                 </div>
               </div>
             ))}
           </div>
+
+          <a
+            className="featured-experience"
+            href="https://www.transcendentalprescience.com"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <div className="featured-experience-image">
+              <Image
+                src="/axiom-and-ash.svg"
+                alt="Axiom and Ash: Cyber Scribe Forge"
+                fill
+                sizes="(max-width: 720px) 100vw, 40vw"
+              />
+            </div>
+            <div className="featured-experience-copy">
+              <span className="section-label">Featured link / 03</span>
+              <h3>Axiom and Ash: Cyber Scribe Forge</h3>
+              <p>Enter the forge at Transcendental Prescience.</p>
+              <span className="featured-experience-cta">Visit site</span>
+            </div>
+          </a>
 
           <div id="product-catalog">
             {products.length === 0 ? (
@@ -215,7 +244,7 @@ export default async function HomePage() {
               <span className="section-label">Crypto application suite</span>
               <h2 className="section-title">HyperCross.</h2>
             </div>
-            <p className="section-note">Three linked surfaces for navigating and executing your HyperCross workflows.</p>
+            <p className="section-note">Three surfaces for navigating and executing your HyperCross workflows.</p>
           </div>
 
           <div className="crypto-app-grid" aria-label="HyperCross application links">
@@ -224,11 +253,7 @@ export default async function HomePage() {
                 <span className="product-index">App / {String(index + 1).padStart(2, "0")}</span>
                 <h3>{app.name}</h3>
                 <p>{app.description}</p>
-                {app.href ? (
-                  <a href={app.href} rel="noreferrer" target="_blank">Launch app</a>
-                ) : (
-                  <span className="crypto-app-pending">Launch link pending</span>
-                )}
+                <span className="crypto-app-pending">Coming Soon</span>
               </article>
             ))}
           </div>

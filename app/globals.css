@@ -116,6 +116,15 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(3.5rem, 8vw, 7.6rem); let
 .experience-destination span { color: var(--gold); font-family: 'DM Mono', monospace; font-size: 10px; font-style: normal; letter-spacing: .12em; text-transform: uppercase; }
 .experience-destination strong { font-family: 'Syne', sans-serif; font-size: 1.5rem; line-height: 1.1; margin-top: 4px; }
 .experience-destination .experience-subtitle { color: var(--muted); font-family: 'DM Mono', monospace; font-size: 11px; font-style: normal; letter-spacing: .06em; text-transform: uppercase; margin-top: 2px; }
+.featured-experience { background: var(--surface); border: 1px solid var(--line); display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(260px, .85fr); margin-top: 12px; text-decoration: none; transition: border-color .2s ease, background .2s ease; }
+.featured-experience:hover { background: var(--surface-raised); border-color: var(--gold); }
+.featured-experience-image { min-height: 280px; overflow: hidden; position: relative; }
+.featured-experience-image img { object-fit: cover; transition: transform .5s ease; }
+.featured-experience:hover .featured-experience-image img { transform: scale(1.03); }
+.featured-experience-copy { display: flex; flex-direction: column; justify-content: center; padding: 32px; }
+.featured-experience-copy h3 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 3vw, 3rem); letter-spacing: -.05em; line-height: 1; margin: 16px 0 12px; }
+.featured-experience-copy p { color: var(--muted); line-height: 1.5; margin: 0; }
+.featured-experience-cta { color: var(--gold); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .1em; margin-top: 28px; text-transform: uppercase; }
 
 .experience-actions {
   align-items: center;
@@ -173,6 +182,30 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(3.5rem, 8vw, 7.6rem); let
   background: #ff6b5d;
   border-color: #ff6b5d;
   color: #ffffff;
+}
+.play-store-button {
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--violet);
+  color: var(--gold-bright);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  justify-content: center;
+  letter-spacing: .08em;
+  min-height: 44px;
+  padding: 0 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background .2s ease, border-color .2s ease, color .2s ease;
+  width: fit-content;
+}
+.play-store-button:hover {
+  background: var(--violet);
+  border-color: var(--violet);
+  color: var(--void);
 }
 .crypto-apps { padding-top: 0; }
 .crypto-app-grid { display: grid; gap: 12px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 28px; }
@@ -263,6 +296,9 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(3.5rem, 8vw, 7.6rem); let
   .section-heading { align-items: start; flex-direction: column; gap: 8px; }
   .section-note { text-align: left; }
   .experience-destinations { grid-template-columns: 1fr; }
+  .featured-experience { grid-template-columns: 1fr; }
+  .featured-experience-image { min-height: 220px; }
+  .featured-experience-copy { padding: 24px; }
   .crypto-app-grid { grid-template-columns: 1fr; }
   .quadraseer-panel { grid-template-columns: 1fr; }
   .quadraseer-copy { padding: 28px 24px; }

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Axiom and Ash: Cyber Scribe Forge</title>
+  <desc id="desc">A luminous cybernetic writing forge with a central scribe sigil.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#09070d"/>
+      <stop offset="0.52" stop-color="#21152d"/>
+      <stop offset="1" stop-color="#3b171b"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="48%" r="52%">
+      <stop offset="0" stop-color="#ffe09a" stop-opacity=".9"/>
+      <stop offset=".18" stop-color="#e7b84b" stop-opacity=".28"/>
+      <stop offset=".62" stop-color="#a875ff" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#09070d" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" fill="none" stroke="#f5f0e6" stroke-opacity=".09"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <rect width="1200" height="700" fill="url(#grid)"/>
+  <rect width="1200" height="700" fill="url(#glow)"/>
+  <g fill="none" stroke="#e7b84b" stroke-opacity=".7">
+    <circle cx="600" cy="350" r="180"/>
+    <circle cx="600" cy="350" r="132" stroke="#a875ff"/>
+    <path d="M600 120V580M370 350H830M438 188L762 512M762 188L438 512" stroke-opacity=".42"/>
+  </g>
+  <path d="M600 230l82 120-82 120-82-120z" fill="#09070d" fill-opacity=".7" stroke="#ffe09a" stroke-width="2"/>
+  <path d="M600 282v136M532 350h136" stroke="#ef4d4d" stroke-width="2"/>
+  <circle cx="600" cy="350" r="12" fill="#ffe09a"/>
+  <g fill="#f5f0e6" font-family="monospace" letter-spacing="6">
+    <text x="600" y="88" font-size="18" text-anchor="middle" fill="#e7b84b">TRANSCENDENTAL PRESCIENCE / 03</text>
+    <text x="600" y="635" font-size="30" text-anchor="middle">AXIOM + ASH</text>
+    <text x="600" y="668" font-size="14" text-anchor="middle" fill="#ffe09a">CYBER SCRIBE FORGE</text>
+  </g>
+  <g fill="#a875ff" font-family="monospace" font-size="13" letter-spacing="3">
+    <text x="76" y="104">WRITE / DECODE / BECOME</text>
+    <text x="1124" y="600" text-anchor="end">NODE 0x03F</text>
+  </g>
+</svg>

@@ -32,12 +32,6 @@ const experiences = [
     playStoreHref: "https://play.google.com/store/apps/details?id=com.financial.advisor.ai",
   },
   {
-    name: "Axiom and Ash",
-    subtitle: "Cyber Scribe Forge",
-    href: "https://www.transcendentalprescience.com",
-    playStoreHref: "https://play.google.com/store/search?q=Axiom%20and%20Ash%20Cyber%20Scribe%20Forge&c=apps",
-  },
-  {
     name: "QuadraSeer",
     subtitle: "Axiom Zeta control layer",
     href: "https://play.google.com/store/search?q=QuadraSeer&c=apps",

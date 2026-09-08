@@ -1,10 +1,12 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 import { updateCartLine, removeFromCart } from "@/lib/cart-actions";
 import type { CartLine } from "@/lib/shopify-types";
 
 export function CartLineItem({ line }: { line: CartLine }) {
+  const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
   function handleUpdateQuantity(newQuantity: number) {
@@ -14,12 +16,14 @@ export function CartLineItem({ line }: { line: CartLine }) {
       } else {
         await updateCartLine(line.id, newQuantity);
       }
+      router.refresh();
     });
   }
 
   function handleRemove() {
     startTransition(async () => {
       await removeFromCart(line.id);
+      router.refresh();
     });
   }
 

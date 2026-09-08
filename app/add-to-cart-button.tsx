@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 import { addToCart } from "@/lib/cart-actions";
 
@@ -10,11 +11,13 @@ export function AddToCartButton({
   variantId: string;
   availableForSale: boolean;
 }) {
+  const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
   function handleClick() {
     startTransition(async () => {
       const cart = await addToCart(variantId);
+      router.refresh();
       window.location.assign(cart.checkoutUrl);
     });
   }

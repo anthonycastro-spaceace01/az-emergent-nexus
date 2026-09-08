@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 import { shopifyFetch } from "./shopify";
 import {
@@ -44,6 +45,7 @@ export async function createCart(): Promise<Cart> {
 
   const cart = data.cartCreate.cart;
   await setCartId(cart.id);
+  revalidatePath("/cart");
   return cart;
 }
 
@@ -63,6 +65,7 @@ export async function addToCart(variantId: string): Promise<Cart> {
     }
   );
 
+  revalidatePath("/cart");
   return data.cartLinesAdd.cart;
 }
 
@@ -81,6 +84,7 @@ export async function updateCartLine(
     }
   );
 
+  revalidatePath("/cart");
   return data.cartLinesUpdate.cart;
 }
 
@@ -96,5 +100,6 @@ export async function removeFromCart(lineId: string): Promise<Cart> {
     }
   );
 
+  revalidatePath("/cart");
   return data.cartLinesRemove.cart;
 }

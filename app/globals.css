@@ -117,6 +117,14 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(3.5rem, 8vw, 7.6rem); let
 .experience-destination strong { font-family: 'Syne', sans-serif; font-size: 1.5rem; line-height: 1.1; margin-top: 4px; }
 .experience-destination .experience-subtitle { color: var(--muted); font-family: 'DM Mono', monospace; font-size: 11px; font-style: normal; letter-spacing: .06em; text-transform: uppercase; margin-top: 2px; }
 
+.experience-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
 .current-members-button {
   align-items: center;
   background: var(--gold);
@@ -129,9 +137,8 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(3.5rem, 8vw, 7.6rem); let
   font-weight: 600;
   justify-content: center;
   letter-spacing: .08em;
-  margin-top: 16px;
   min-height: 44px;
-  padding: 0 20px;
+  padding: 0 18px;
   text-decoration: none;
   text-transform: uppercase;
   transition: background .2s ease, color .2s ease, border-color .2s ease;
@@ -141,6 +148,31 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(3.5rem, 8vw, 7.6rem); let
   background: var(--gold-bright);
   border-color: var(--gold-bright);
   color: var(--void);
+}
+
+.new-members-button {
+  align-items: center;
+  background: var(--red);
+  border: 1px solid var(--red);
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  justify-content: center;
+  letter-spacing: .08em;
+  min-height: 44px;
+  padding: 0 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background .2s ease, border-color .2s ease;
+  width: fit-content;
+}
+.new-members-button:hover {
+  background: #ff6b5d;
+  border-color: #ff6b5d;
+  color: #ffffff;
 }
 .crypto-apps { padding-top: 0; }
 .crypto-app-grid { display: grid; gap: 12px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 28px; }

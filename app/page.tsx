@@ -123,14 +123,22 @@ export default async function HomePage() {
                 <span>Experience / {String(index + 1).padStart(2, "0")}</span>
                 <strong>{exp.name}</strong>
                 <em className="experience-subtitle">{exp.subtitle}</em>
-                <a
-                  className="current-members-button"
-                  href={exp.href}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  Current Members
-                </a>
+                <div className="experience-actions">
+                  <a
+                    className="current-members-button"
+                    href={exp.href}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    Current Members
+                  </a>
+                  <a
+                    className="new-members-button"
+                    href="#systems"
+                  >
+                    New Members
+                  </a>
+                </div>
               </div>
             ))}
           </div>
@@ -171,14 +179,22 @@ export default async function HomePage() {
                       )}
                     </div>
                     {experiences[index] && (
-                      <a
-                        className="current-members-button"
-                        href={experiences[index].href}
-                        rel="noreferrer"
-                        target="_blank"
-                      >
-                        Current Members
-                      </a>
+                      <div className="experience-actions">
+                        <a
+                          className="current-members-button"
+                          href={experiences[index].href}
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          Current Members
+                        </a>
+                        <a
+                          className="new-members-button"
+                          href="#systems"
+                        >
+                          New Members
+                        </a>
+                      </div>
                     )}
                   </div>
                 </article>

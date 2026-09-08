@@ -134,7 +134,7 @@ export default async function HomePage() {
                   </a>
                   <a
                     className="new-members-button"
-                    href="#systems"
+                    href={products.length > index ? `#product-card-${index}` : "#product-catalog"}
                   >
                     New Members
                   </a>
@@ -143,64 +143,66 @@ export default async function HomePage() {
             ))}
           </div>
 
-          {products.length === 0 ? (
-            <div className="empty-state">No systems are currently available.</div>
-          ) : (
-            <div className="product-grid">
-              {products.map((product, index) => (
-                <article className="product-card" key={product.id}>
-                  <div className="product-visual">
-                    {product.featuredImage ? (
-                      <Image
-                        src={product.featuredImage.url}
-                        alt={product.featuredImage.altText ?? product.title}
-                        fill
-                        sizes="(max-width: 720px) 100vw, 50vw"
-                      />
-                    ) : (
-                      <span className="product-visual-empty">Signal / {String(index + 1).padStart(2, "0")}</span>
-                    )}
-                  </div>
-                  <div className="product-info">
-                    <span className="product-index">System / {String(index + 1).padStart(2, "0")}</span>
-                    <h3 className="product-title">{product.title}</h3>
-                    <p className="product-description">
-                      {product.description || "Explore this system through a guided browser-based experience."}
-                    </p>
-                    <div className="product-bottom">
-                      <span className="price">
-                        ${parseFloat(product.priceRange.minVariantPrice.amount).toFixed(2)} <small>{product.priceRange.minVariantPrice.currencyCode}</small>
-                      </span>
-                      {product.variants.nodes.length > 0 && (
-                        <AddToCartButton
-                          variantId={product.variants.nodes[0].id}
-                          availableForSale={product.availableForSale}
+          <div id="product-catalog">
+            {products.length === 0 ? (
+              <div className="empty-state">No systems are currently available.</div>
+            ) : (
+              <div className="product-grid">
+                {products.map((product, index) => (
+                  <article className="product-card" id={`product-card-${index}`} key={product.id}>
+                    <div className="product-visual">
+                      {product.featuredImage ? (
+                        <Image
+                          src={product.featuredImage.url}
+                          alt={product.featuredImage.altText ?? product.title}
+                          fill
+                          sizes="(max-width: 720px) 100vw, 50vw"
                         />
+                      ) : (
+                        <span className="product-visual-empty">Signal / {String(index + 1).padStart(2, "0")}</span>
                       )}
                     </div>
-                    {experiences[index] && (
-                      <div className="experience-actions">
-                        <a
-                          className="current-members-button"
-                          href={experiences[index].href}
-                          rel="noreferrer"
-                          target="_blank"
-                        >
-                          Current Members
-                        </a>
-                        <a
-                          className="new-members-button"
-                          href="#systems"
-                        >
-                          New Members
-                        </a>
+                    <div className="product-info">
+                      <span className="product-index">System / {String(index + 1).padStart(2, "0")}</span>
+                      <h3 className="product-title">{product.title}</h3>
+                      <p className="product-description">
+                        {product.description || "Explore this system through a guided browser-based experience."}
+                      </p>
+                      <div className="product-bottom">
+                        <span className="price">
+                          ${parseFloat(product.priceRange.minVariantPrice.amount).toFixed(2)} <small>{product.priceRange.minVariantPrice.currencyCode}</small>
+                        </span>
+                        {product.variants.nodes.length > 0 && (
+                          <AddToCartButton
+                            variantId={product.variants.nodes[0].id}
+                            availableForSale={product.availableForSale}
+                          />
+                        )}
                       </div>
-                    )}
-                  </div>
-                </article>
-              ))}
-            </div>
-          )}
+                      {experiences[index] && (
+                        <div className="experience-actions">
+                          <a
+                            className="current-members-button"
+                            href={experiences[index].href}
+                            rel="noreferrer"
+                            target="_blank"
+                          >
+                            Current Members
+                          </a>
+                          <a
+                            className="new-members-button"
+                            href="#access"
+                          >
+                            New Members
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            )}
+          </div>
         </section>
 
         <section className="section crypto-apps" id="hypercross">

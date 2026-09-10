@@ -133,6 +133,14 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(3.5rem, 8vw, 7.6rem); let
   gap: 12px;
   margin-top: 16px;
 }
+.experience-actions .experience-pending {
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
 
 .current-members-button {
   align-items: center;

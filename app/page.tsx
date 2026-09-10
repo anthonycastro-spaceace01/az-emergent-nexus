@@ -33,7 +33,7 @@ const experiences: Experience[] = [
   {
     name: "EqualiF.I. Financial Planner",
     subtitle: "Personal finance intelligence",
-    href: "https://play.google.com/store/apps/details?id=com.financial.advisor.ai",
+    href: "https://equali-f-i-planner.vercel.app/",
   },
   {
     name: "QuadraSeer",

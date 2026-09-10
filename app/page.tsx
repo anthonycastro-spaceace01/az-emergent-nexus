@@ -12,7 +12,15 @@ const hasShopifyConfiguration = Boolean(
     process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN?.trim()
 );
 
-const experiences = [
+type Experience = {
+  name: string;
+  subtitle: string;
+  href: string;
+  playStoreHref: string;
+  comingSoon?: boolean;
+};
+
+const experiences: Experience[] = [
   {
     name: "QUADRAMINDS",
     subtitle: "QUADRAM.I.N.D.Sight.",
@@ -36,13 +44,55 @@ const experiences = [
     subtitle: "Axiom Zeta control layer",
     href: "https://play.google.com/store/search?q=QuadraSeer&c=apps",
     playStoreHref: "https://play.google.com/store/search?q=QuadraSeer&c=apps",
+    comingSoon: true,
   },
 ];
 
-const googlePlayOnlyExperiences = new Set([
-  "EqualiF.I. Financial Planner",
-  "QuadraSeer",
-]);
+const googlePlayOnlyExperiences = new Set(["QuadraSeer"]);
+
+function ExperienceAccessActions({ experience }: { experience: Experience }) {
+  if (experience.comingSoon) {
+    return (
+      <div className="experience-actions">
+        <span className="experience-pending">Coming Soon</span>
+      </div>
+    );
+  }
+
+  return (
+    <div className="experience-actions">
+      {!googlePlayOnlyExperiences.has(experience.name) && (
+        <>
+          <a
+            className="current-members-button"
+            href={experience.href}
+            rel="noreferrer"
+            target="_blank"
+          >
+            Current Members
+          </a>
+          <a
+            className="new-members-button"
+            href={experience.href}
+            rel="noreferrer"
+            target="_blank"
+          >
+            New Members
+          </a>
+        </>
+      )}
+      <a
+        className="play-store-button"
+        href={experience.playStoreHref}
+        rel="noreferrer"
+        target="_blank"
+      >
+        Download on Google Play
+      </a>
+    </div>
+  );
+}
+
 const substackLink = "https://substack.com/@anthonycastro33";
 const cryptoApps = [
   {
@@ -139,36 +189,7 @@ export default async function HomePage() {
                 <span>Experience / {String(index + 1).padStart(2, "0")}</span>
                 <strong>{exp.name}</strong>
                 <em className="experience-subtitle">{exp.subtitle}</em>
-                <div className="experience-actions">
-                  {!googlePlayOnlyExperiences.has(exp.name) && (
-                    <>
-                      <a
-                        className="current-members-button"
-                        href={exp.href}
-                        rel="noreferrer"
-                        target="_blank"
-                      >
-                        Current Members
-                      </a>
-                      <a
-                        className="new-members-button"
-                        href={exp.href}
-                        rel="noreferrer"
-                        target="_blank"
-                      >
-                        New Members
-                      </a>
-                    </>
-                  )}
-                  <a
-                    className="play-store-button"
-                    href={exp.playStoreHref}
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    Download on Google Play
-                  </a>
-                </div>
+                <ExperienceAccessActions experience={exp} />
               </div>
             ))}
           </div>
@@ -230,37 +251,7 @@ export default async function HomePage() {
                         )}
                       </div>
                       {experiences[index] && (
-                        <div className="experience-actions">
-                          {!googlePlayOnlyExperiences.has(experiences[index].name) ? (
-                            <>
-                              <a
-                                className="current-members-button"
-                                href={experiences[index].href}
-                                rel="noreferrer"
-                                target="_blank"
-                              >
-                                Current Members
-                              </a>
-                              <a
-                                className="new-members-button"
-                                href={experiences[index].href}
-                                rel="noreferrer"
-                                target="_blank"
-                              >
-                                New Members
-                              </a>
-                            </>
-                          ) : (
-                            <a
-                              className="play-store-button"
-                              href={experiences[index].playStoreHref}
-                              rel="noreferrer"
-                              target="_blank"
-                            >
-                              Download on Google Play
-                            </a>
-                          )}
-                        </div>
+                        <ExperienceAccessActions experience={experiences[index]} />
                       )}
                     </div>
                   </article>
@@ -310,7 +301,7 @@ export default async function HomePage() {
               <p>
                 It determines the right model, service, or hardware for each task while enforcing permissions, resource limits, and safety boundaries across HRM, PhaseLock, Sovereign Vault, and specialized applications.
               </p>
-              <span className="quadraseer-pending">Access node pending</span>
+              <span className="quadraseer-pending">Coming Soon</span>
             </div>
             <div className="quadraseer-map" aria-hidden="true">
               <span className="quadraseer-core">Quadra<br />Matrix</span>

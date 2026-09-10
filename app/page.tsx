@@ -31,6 +31,11 @@ const experiences: Experience[] = [
     href: "https://mind-forge-2-0.vercel.app/",
   },
   {
+    name: "EqualiF.I. Financial Planner",
+    subtitle: "Personal finance intelligence",
+    href: "https://play.google.com/store/apps/details?id=com.financial.advisor.ai",
+  },
+  {
     name: "QuadraSeer",
     subtitle: "Axiom Zeta control layer",
     comingSoon: true,

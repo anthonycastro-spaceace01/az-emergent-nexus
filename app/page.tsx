@@ -21,8 +21,8 @@ type Experience = {
 
 const experiences: Experience[] = [
   {
-    name: "QUADRAMINDS",
-    subtitle: "QUADRAM.I.N.D.Sight.",
+    name: "QuadraM.I.N.D.-Sight",
+    subtitle: "Architecting build-ready MVPs for founders.",
     href: "https://quadram-i-n-d-s-sight.vercel.app/",
   },
   {
@@ -145,6 +145,7 @@ export default async function HomePage() {
             </p>
             <div className="hero-actions">
               <a className="primary-link" href="#systems">Shop experiences</a>
+              <a className="secondary-link" href="#mvp-blueprinting">MVP Blueprinting</a>
               <a className="secondary-link" href="#hypercross">Explore HyperCross</a>
               <a className="secondary-link" href="#quadraseer">Explore QuadraSeer</a>
               <a className="secondary-link" href="#access">How it works</a>
@@ -157,6 +158,36 @@ export default async function HomePage() {
           <div className="signal"><strong>02 / Access</strong><span>Enter the experience and begin your next line of inquiry.</span></div>
           <div className="signal"><strong>03 / Enter</strong><span>Open your browser-based experience and begin.</span></div>
         </div>
+
+        <section className="section" id="mvp-blueprinting">
+          <div className="section-heading">
+            <div>
+              <span className="section-label">Consulting / architecture mapping</span>
+              <h2 className="section-title">MVP (Minimum Viable Product) Blueprinting</h2>
+            </div>
+            <p className="section-note">A fixed-fee advisory package that turns an idea into a build-ready plan.</p>
+          </div>
+
+          <article className="quadraseer-panel">
+            <div className="quadraseer-copy">
+              <span className="product-index">Fixed-price advisory</span>
+              <h3>Turn the idea into a build-ready blueprint.</h3>
+              <p>
+                Many entrepreneurs have app ideas but zero technical knowledge. This consulting service offers a fixed-price package where I do not write the code, but I map the architecture.
+              </p>
+              <p>
+                I interview them about their idea and deliver a comprehensive "Build Document" detailing the recommended tech stack, database structure, and basic wireframes. This saves them thousands in blind development costs.
+              </p>
+            </div>
+            <div className="quadraseer-map" aria-hidden="true">
+              <span className="quadraseer-core">Build<br />Document</span>
+              <span className="quadraseer-node quadraseer-node-hrm">Stack</span>
+              <span className="quadraseer-node quadraseer-node-phase">Schema</span>
+              <span className="quadraseer-node quadraseer-node-vault">Wireframes</span>
+              <span className="quadraseer-node quadraseer-node-local">Savings</span>
+            </div>
+          </article>
+        </section>
 
         <section className="section" id="systems">
           <div className="section-heading">

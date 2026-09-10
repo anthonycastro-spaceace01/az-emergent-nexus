@@ -22,7 +22,7 @@ type Experience = {
 const experiences: Experience[] = [
   {
     name: "QuadraM.I.N.D.-Sight",
-    subtitle: "Architecting build-ready MVPs for founders.",
+    subtitle: "Founder-ready product architecture, mapped before build.",
     href: "https://quadram-i-n-d-s-sight.vercel.app/",
   },
   {
@@ -163,28 +163,28 @@ export default async function HomePage() {
           <div className="section-heading">
             <div>
               <span className="section-label">Consulting / architecture mapping</span>
-              <h2 className="section-title">MVP (Minimum Viable Product) Blueprinting</h2>
+              <h2 className="section-title">MVP Blueprinting</h2>
             </div>
-            <p className="section-note">A fixed-fee advisory package that turns an idea into a build-ready plan.</p>
+            <p className="section-note">A premium advisory package that turns a concept into a decision-ready product roadmap.</p>
           </div>
 
           <article className="quadraseer-panel">
             <div className="quadraseer-copy">
-              <span className="product-index">Fixed-price advisory</span>
-              <h3>Turn the idea into a build-ready blueprint.</h3>
+              <span className="product-index">Fixed-fee advisory</span>
+              <h3>Build confidence before you spend on engineering.</h3>
               <p>
-                Many entrepreneurs have app ideas but zero technical knowledge. This consulting service offers a fixed-price package where I do not write the code, but I map the architecture.
+                Many founders have an app idea but no technical roadmap. This consulting engagement is designed for that exact moment: you bring the vision, and I map the system before a single line of code is written.
               </p>
               <p>
-                I interview them about their idea and deliver a comprehensive "Build Document" detailing the recommended tech stack, database structure, and basic wireframes. This saves them thousands in blind development costs.
+                I conduct a focused discovery process, then deliver a comprehensive Build Document outlining the recommended tech stack, database architecture, core workflows, and basic wireframes so you can move forward with clarity instead of blind development costs.
               </p>
             </div>
             <div className="quadraseer-map" aria-hidden="true">
-              <span className="quadraseer-core">Build<br />Document</span>
-              <span className="quadraseer-node quadraseer-node-hrm">Stack</span>
-              <span className="quadraseer-node quadraseer-node-phase">Schema</span>
+              <span className="quadraseer-core">Build<br />Plan</span>
+              <span className="quadraseer-node quadraseer-node-hrm">Tech Stack</span>
+              <span className="quadraseer-node quadraseer-node-phase">Data Model</span>
               <span className="quadraseer-node quadraseer-node-vault">Wireframes</span>
-              <span className="quadraseer-node quadraseer-node-local">Savings</span>
+              <span className="quadraseer-node quadraseer-node-local">Investor Confidence</span>
             </div>
           </article>
         </section>

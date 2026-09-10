@@ -191,30 +191,6 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(3.5rem, 8vw, 7.6rem); let
   border-color: #ff6b5d;
   color: #ffffff;
 }
-.play-store-button {
-  align-items: center;
-  background: transparent;
-  border: 1px solid var(--violet);
-  color: var(--gold-bright);
-  cursor: pointer;
-  display: inline-flex;
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  font-weight: 600;
-  justify-content: center;
-  letter-spacing: .08em;
-  min-height: 44px;
-  padding: 0 18px;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: background .2s ease, border-color .2s ease, color .2s ease;
-  width: fit-content;
-}
-.play-store-button:hover {
-  background: var(--violet);
-  border-color: var(--violet);
-  color: var(--void);
-}
 .crypto-apps { padding-top: 0; }
 .crypto-app-grid { display: grid; gap: 12px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 28px; }
 .crypto-app { background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; min-height: 280px; padding: 26px; position: relative; }

@@ -15,8 +15,7 @@ const hasShopifyConfiguration = Boolean(
 type Experience = {
   name: string;
   subtitle: string;
-  href: string;
-  playStoreHref: string;
+  href?: string;
   comingSoon?: boolean;
 };
 
@@ -25,30 +24,18 @@ const experiences: Experience[] = [
     name: "QUADRAMINDS",
     subtitle: "QUADRAM.I.N.D.Sight.",
     href: "https://quadram-i-n-d-s-sight.vercel.app/",
-    playStoreHref: "https://play.google.com/store/search?q=QUADRAMINDS&c=apps",
   },
   {
     name: "CONVERGENCE FORM EXTRACTOR",
     subtitle: "Mind Forge 2.0",
     href: "https://mind-forge-2-0.vercel.app/",
-    playStoreHref: "https://play.google.com/store/search?q=Convergence%20Form%20Extractor&c=apps",
-  },
-  {
-    name: "EqualiF.I. Financial Planner",
-    subtitle: "Personal finance intelligence",
-    href: "https://play.google.com/store/apps/details?id=com.financial.advisor.ai",
-    playStoreHref: "https://play.google.com/store/apps/details?id=com.financial.advisor.ai",
   },
   {
     name: "QuadraSeer",
     subtitle: "Axiom Zeta control layer",
-    href: "https://play.google.com/store/search?q=QuadraSeer&c=apps",
-    playStoreHref: "https://play.google.com/store/search?q=QuadraSeer&c=apps",
     comingSoon: true,
   },
 ];
-
-const googlePlayOnlyExperiences = new Set(["QuadraSeer"]);
 
 function ExperienceAccessActions({ experience }: { experience: Experience }) {
   if (experience.comingSoon) {
@@ -59,35 +46,27 @@ function ExperienceAccessActions({ experience }: { experience: Experience }) {
     );
   }
 
+  if (!experience.href) {
+    return null;
+  }
+
   return (
     <div className="experience-actions">
-      {!googlePlayOnlyExperiences.has(experience.name) && (
-        <>
-          <a
-            className="current-members-button"
-            href={experience.href}
-            rel="noreferrer"
-            target="_blank"
-          >
-            Current Members
-          </a>
-          <a
-            className="new-members-button"
-            href={experience.href}
-            rel="noreferrer"
-            target="_blank"
-          >
-            New Members
-          </a>
-        </>
-      )}
       <a
-        className="play-store-button"
-        href={experience.playStoreHref}
+        className="current-members-button"
+        href={experience.href}
         rel="noreferrer"
         target="_blank"
       >
-        Download on Google Play
+        Current Members
+      </a>
+      <a
+        className="new-members-button"
+        href={experience.href}
+        rel="noreferrer"
+        target="_blank"
+      >
+        New Members
       </a>
     </div>
   );

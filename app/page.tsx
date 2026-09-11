@@ -122,7 +122,18 @@ export default async function HomePage() {
 
       <main>
         <section className="hero">
+          <div className="hero-orbit" aria-hidden="true">
+            <span className="orbit-path orbit-path-one" />
+            <span className="orbit-path orbit-path-two" />
+            <span className="orbit-path orbit-path-three" />
+          </div>
+          <div className="hero-copy">
+            <p className="kicker">AZ Emergent Nexus / System 001</p>
+            <h1>Enter the<br /><span className="hero-highlight">nexus.</span></h1>
+            <p className="hero-lede">Cognitive systems for the next version of you.</p>
+          </div>
           <a className="hero-portal" href={substackLink} rel="noreferrer" target="_blank" aria-label="Enter The Singularity Point">
+            <span className="portal-stars" />
             <span className="portal-glow" />
             <span className="sigil-ring sigil-ring-outer" />
             <span className="sigil-ring sigil-ring-middle" />
@@ -130,26 +141,28 @@ export default async function HomePage() {
             <span className="sigil-cross sigil-cross-horizontal" />
             <span className="sigil-cross sigil-cross-vertical" />
             <span className="sigil-diamond" />
-            <span className="sigil-core">&#x2299;</span>
-            <span className="sigil-binary sigil-binary-top">101&nbsp;001&nbsp;011</span>
-            <span className="sigil-binary sigil-binary-bottom">010&nbsp;110&nbsp;101</span>
-            <span className="sigil-glyph sigil-glyph-left">&#x2641;</span>
-            <span className="sigil-glyph sigil-glyph-right">&#x2642;</span>
-            <span className="portal-label">The Singularity Point</span>
+            <span className="sigil-petal sigil-petal-one" />
+            <span className="sigil-petal sigil-petal-two" />
+            <span className="sigil-petal sigil-petal-three" />
+            <span className="sigil-petal sigil-petal-four" />
+            <span className="portal-interface">
+              <span className="portal-eyebrow">Nexus Interface</span>
+              <strong>The Singularity<br />Point</strong>
+              <span className="portal-status">Ready / Enter below</span>
+            </span>
+            <span className="portal-label">Initialize Nexus</span>
           </a>
-          <div className="hero-copy">
-            <p className="kicker">Shop / browser-based experiences</p>
-            <h1>Choose your next<br /><span className="hero-highlight">experience.</span></h1>
-            <p className="hero-lede">
-              Open the digital experience built for the way you think, create, and see the world.
-            </p>
-            <div className="hero-actions">
-              <a className="primary-link" href="#systems">Shop experiences</a>
-              <a className="secondary-link" href="#mvp-blueprinting">MVP Blueprinting</a>
-              <a className="secondary-link" href="#hypercross">Explore HyperCross</a>
-              <a className="secondary-link" href="#quadraseer">Explore QuadraSeer</a>
-              <a className="secondary-link" href="#access">How it works</a>
-            </div>
+          <div className="hero-actions">
+            <a className="primary-link" href="#systems">Explore systems</a>
+            <a className="secondary-link" href="#mvp-blueprinting">MVP Blueprinting</a>
+            <a className="secondary-link" href="#hypercross">HyperCross</a>
+            <a className="secondary-link" href="#quadraseer">QuadraMatrix</a>
+            <a className="secondary-link" href="#access">Access protocol</a>
+          </div>
+          <div className="hero-readout" aria-hidden="true">
+            <span>Signal 93.7%</span>
+            <span>Orbit stable</span>
+            <span>Node AZ-01</span>
           </div>
         </section>
 

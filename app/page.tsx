@@ -21,14 +21,6 @@ const upcomingExperiences = [
     name: "CONVERGENCE FORM EXTRACTOR",
     subtitle: "Mind Forge 2.0",
   },
-  {
-    name: "EqualiF.I. Financial Planner",
-    subtitle: "Personal finance intelligence",
-  },
-  {
-    name: "QuadraSeer",
-    subtitle: "Axiom Zeta control layer",
-  },
 ] as const;
 
 const substackLink = "https://substack.com/@anthonycastro33";
@@ -271,7 +263,6 @@ export default async function HomePage() {
             ))}
           </div>
         </section>
-
       </main>
       <footer className="site-footer">AZ Emergent Nexus / Cognitive systems for the next version of you</footer>
     </div>

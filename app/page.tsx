@@ -12,70 +12,24 @@ const hasShopifyConfiguration = Boolean(
     process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN?.trim()
 );
 
-type Experience = {
-  name: string;
-  subtitle: string;
-  href?: string;
-  comingSoon?: boolean;
-};
-
-const experiences: Experience[] = [
+const upcomingExperiences = [
   {
     name: "QuadraM.I.N.D.-Sight",
     subtitle: "Founder-ready product architecture, mapped before build.",
-    href: "https://quadram-i-n-d-s-sight.vercel.app/",
   },
   {
     name: "CONVERGENCE FORM EXTRACTOR",
     subtitle: "Mind Forge 2.0",
-    href: "https://mind-forge-2-0.vercel.app/",
   },
   {
     name: "EqualiF.I. Financial Planner",
     subtitle: "Personal finance intelligence",
-    href: "https://equali-f-i-planner.vercel.app/",
   },
   {
     name: "QuadraSeer",
     subtitle: "Axiom Zeta control layer",
-    comingSoon: true,
   },
-];
-
-function ExperienceAccessActions({ experience }: { experience: Experience }) {
-  if (experience.comingSoon) {
-    return (
-      <div className="experience-actions">
-        <span className="experience-pending">Coming Soon</span>
-      </div>
-    );
-  }
-
-  if (!experience.href) {
-    return null;
-  }
-
-  return (
-    <div className="experience-actions">
-      <a
-        className="current-members-button"
-        href={experience.href}
-        rel="noreferrer"
-        target="_blank"
-      >
-        Current Members
-      </a>
-      <a
-        className="new-members-button"
-        href={experience.href}
-        rel="noreferrer"
-        target="_blank"
-      >
-        New Members
-      </a>
-    </div>
-  );
-}
+] as const;
 
 const substackLink = "https://substack.com/@anthonycastro33";
 const cryptoApps = [
@@ -155,8 +109,7 @@ export default async function HomePage() {
           <div className="hero-actions">
             <a className="primary-link" href="#systems">Explore systems</a>
             <a className="secondary-link" href="#mvp-blueprinting">MVP Blueprinting</a>
-            <a className="secondary-link" href="#hypercross">HyperCross</a>
-            <a className="secondary-link" href="#quadraseer">QuadraMatrix</a>
+            <a className="secondary-link" href="#coming-soon">Coming soon</a>
             <a className="secondary-link" href="#access">Access protocol</a>
           </div>
           <div className="hero-readout" aria-hidden="true">
@@ -205,42 +158,43 @@ export default async function HomePage() {
         <section className="section" id="systems">
           <div className="section-heading">
             <div>
-              <span className="section-label">Shop the collection</span>
-              <h2 className="section-title">Available experiences.</h2>
+              <span className="section-label">Emergent interface / new signal</span>
+              <h2 className="section-title">The S.I.G.H.T. Zone.</h2>
             </div>
-            <p className="section-note">Explore the experience linked to each system.</p>
+            <p className="section-note">A new portal is taking shape. Access coordinates will be established next.</p>
           </div>
 
-          <div className="experience-destinations" aria-label="Experience links">
-            {experiences.map((exp, index) => (
-              <div className="experience-destination" key={exp.name}>
-                <span>Experience / {String(index + 1).padStart(2, "0")}</span>
-                <strong>{exp.name}</strong>
-                <em className="experience-subtitle">{exp.subtitle}</em>
-                <ExperienceAccessActions experience={exp} />
-              </div>
-            ))}
+          <div className="sight-zone-portal" aria-label="The S.I.G.H.T. Zone portal is awaiting access coordinates">
+            <span className="sight-zone-orbit sight-zone-orbit-outer" aria-hidden="true" />
+            <span className="sight-zone-orbit sight-zone-orbit-inner" aria-hidden="true" />
+            <span className="sight-zone-axis sight-zone-axis-horizontal" aria-hidden="true" />
+            <span className="sight-zone-axis sight-zone-axis-vertical" aria-hidden="true" />
+            <div className="sight-zone-interface">
+              <span>Nexus interface / S.I.G.H.T.</span>
+              <strong>The S.I.G.H.T.<br />Zone</strong>
+              <em>Coordinates pending</em>
+            </div>
           </div>
 
           <a
             className="featured-experience"
-            href="https://www.transcendentalprescience.com"
+            href="https://transcendentalprescience.com"
             rel="noreferrer"
             target="_blank"
           >
             <div className="featured-experience-image">
               <Image
                 src="/axiom-and-ash.svg"
-                alt="Axiom and Ash: Cyber Scribe Forge"
+                alt="Axiom and Ash"
                 fill
-                sizes="(max-width: 720px) 100vw, 40vw"
+                sizes="(max-width: 1240px) 100vw, 1176px"
               />
             </div>
             <div className="featured-experience-copy">
-              <span className="section-label">Featured link / 03</span>
-              <h3>Axiom and Ash: Cyber Scribe Forge</h3>
-              <p>Enter the forge at Transcendental Prescience.</p>
-              <span className="featured-experience-cta">Visit site</span>
+              <span className="section-label">Axiom and Ash</span>
+              <h3>Transcendental Prescience</h3>
+              <p>Enter the signal beyond the known.</p>
+              <span className="featured-experience-cta">Visit Transcendental Prescience</span>
             </div>
           </a>
 
@@ -278,9 +232,6 @@ export default async function HomePage() {
                           />
                         )}
                       </div>
-                      {experiences[index] && (
-                        <ExperienceAccessActions experience={experiences[index]} />
-                      )}
                     </div>
                   </article>
                 ))}
@@ -289,19 +240,30 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section className="section crypto-apps" id="hypercross">
+        <section className="section coming-soon" id="coming-soon">
           <div className="section-heading">
             <div>
-              <span className="section-label">Crypto application suite</span>
-              <h2 className="section-title">HyperCross.</h2>
+              <span className="section-label">Systems in development</span>
+              <h2 className="section-title">Coming soon.</h2>
             </div>
-            <p className="section-note">Three surfaces for navigating and executing your HyperCross workflows.</p>
+            <p className="section-note">Experiences and applications preparing for their next access window.</p>
           </div>
 
-          <div className="crypto-app-grid" aria-label="HyperCross application links">
+          <div className="experience-destinations" aria-label="Experiences coming soon">
+            {upcomingExperiences.map((experience, index) => (
+              <article className="experience-destination" key={experience.name}>
+                <span>Experience / {String(index + 1).padStart(2, "0")}</span>
+                <strong>{experience.name}</strong>
+                <em className="experience-subtitle">{experience.subtitle}</em>
+                <span className="experience-pending">Coming Soon</span>
+              </article>
+            ))}
+          </div>
+
+          <div className="crypto-app-grid" aria-label="HyperCross applications coming soon">
             {cryptoApps.map((app, index) => (
               <article className="crypto-app" key={app.name}>
-                <span className="product-index">App / {String(index + 1).padStart(2, "0")}</span>
+                <span className="product-index">HyperCross / {String(index + 1).padStart(2, "0")}</span>
                 <h3>{app.name}</h3>
                 <p>{app.description}</p>
                 <span className="crypto-app-pending">Coming Soon</span>
@@ -310,36 +272,6 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section className="section quadraseer" id="quadraseer">
-          <div className="section-heading">
-            <div>
-              <span className="section-label">Axiom Zeta control layer</span>
-              <h2 className="section-title">QuadraMatrixA.I.</h2>
-            </div>
-            <p className="section-note">Operating intelligence that coordinates the ecosystem around every task.</p>
-          </div>
-
-          <article className="quadraseer-panel">
-            <div className="quadraseer-copy">
-              <span className="product-index">Orchestrate / route / govern</span>
-              <h3>The system around the intelligence.</h3>
-              <p>
-                QuadraMatrixA.I. coordinates AI tools, applications, policies, workflows, knowledge sources, and local computational resources through one unified control surface.
-              </p>
-              <p>
-                It determines the right model, service, or hardware for each task while enforcing permissions, resource limits, and safety boundaries across HRM, PhaseLock, Sovereign Vault, and specialized applications.
-              </p>
-              <span className="quadraseer-pending">Coming Soon</span>
-            </div>
-            <div className="quadraseer-map" aria-hidden="true">
-              <span className="quadraseer-core">Quadra<br />Matrix</span>
-              <span className="quadraseer-node quadraseer-node-hrm">HRM</span>
-              <span className="quadraseer-node quadraseer-node-phase">PhaseLock</span>
-              <span className="quadraseer-node quadraseer-node-vault">Sovereign Vault</span>
-              <span className="quadraseer-node quadraseer-node-local">Local Compute</span>
-            </div>
-          </article>
-        </section>
       </main>
       <footer className="site-footer">AZ Emergent Nexus / Cognitive systems for the next version of you</footer>
     </div>

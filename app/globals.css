@@ -147,6 +147,25 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.9rem, 4.3vw, 4.6rem); l
 .section-label { color: var(--cyan); font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
 .section-title { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 4rem); letter-spacing: -.05em; line-height: 1; margin: 10px 0 0; }
 .section-note { color: var(--muted); font-size: 14px; line-height: 1.5; max-width: 270px; text-align: right; }
+.sight-zone-portal { align-items: center; background: radial-gradient(circle, rgba(116,227,255,.18) 0 8%, rgba(255,79,200,.15) 22%, rgba(7,20,37,.76) 48%, rgba(2,13,26,.96) 72%); border: 1px solid rgba(116,227,255,.38); display: flex; height: min(72vw, 640px); justify-content: center; margin-top: 28px; overflow: hidden; position: relative; }
+.sight-zone-portal::before, .sight-zone-portal::after { border: 1px solid rgba(255,79,200,.5); content: ''; height: 58%; position: absolute; transform: rotate(45deg); width: 58%; }
+.sight-zone-portal::after { border-color: rgba(116,227,255,.42); height: 42%; transform: rotate(22.5deg); width: 42%; }
+.sight-zone-orbit { border: 1px solid; border-radius: 50%; position: absolute; }
+.sight-zone-orbit::before, .sight-zone-orbit::after { background: var(--gold); border-radius: 50%; box-shadow: 0 0 14px rgba(245,200,76,.8); content: ''; height: 7px; position: absolute; width: 7px; }
+.sight-zone-orbit-outer { animation: sight-zone-turn 38s linear infinite; border-color: rgba(255,79,200,.7); height: 82%; width: 82%; }
+.sight-zone-orbit-outer::before { left: 12%; top: 18%; }
+.sight-zone-orbit-outer::after { bottom: 10%; right: 18%; }
+.sight-zone-orbit-inner { animation: sight-zone-turn 26s linear infinite reverse; border-color: rgba(116,227,255,.58); height: 56%; width: 56%; }
+.sight-zone-orbit-inner::before { right: 5%; top: 28%; }
+.sight-zone-orbit-inner::after { bottom: 12%; left: 12%; }
+.sight-zone-axis { background: rgba(116,227,255,.18); position: absolute; }
+.sight-zone-axis-horizontal { height: 1px; width: 92%; }
+.sight-zone-axis-vertical { height: 92%; width: 1px; }
+.sight-zone-interface { align-items: center; backdrop-filter: blur(12px); background: rgba(3,19,35,.82); border: 1px solid rgba(255,231,154,.6); border-radius: 50%; box-shadow: 0 0 60px rgba(116,227,255,.22), inset 0 0 36px rgba(255,79,200,.12); display: flex; flex-direction: column; height: min(34vw, 300px); justify-content: center; position: relative; text-align: center; width: min(34vw, 300px); z-index: 2; }
+.sight-zone-interface span, .sight-zone-interface em { color: var(--cyan); font-family: 'DM Mono', monospace; font-size: 9px; font-style: normal; letter-spacing: .14em; text-transform: uppercase; }
+.sight-zone-interface strong { font-family: 'Syne', sans-serif; font-size: clamp(1.7rem, 4vw, 3.5rem); line-height: .92; margin: 20px 0; }
+.sight-zone-interface em { color: var(--gold); }
+@keyframes sight-zone-turn { to { transform: rotate(360deg); } }
 .experience-destinations { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 28px; }
 .experience-destination { background: linear-gradient(145deg, rgba(12,29,49,.92), rgba(4,17,31,.82)); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; min-height: 230px; overflow: hidden; padding: 26px; position: relative; transition: border-color .2s ease, background .2s ease, transform .2s ease; }
 .experience-destination::after { border: 1px solid rgba(255,79,200,.22); border-radius: 50%; content: ''; height: 190px; position: absolute; right: -82px; top: -88px; width: 190px; }
@@ -154,12 +173,13 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.9rem, 4.3vw, 4.6rem); l
 .experience-destination span { color: var(--gold); font-family: 'DM Mono', monospace; font-size: 10px; font-style: normal; letter-spacing: .12em; text-transform: uppercase; }
 .experience-destination strong { font-family: 'Syne', sans-serif; font-size: 1.5rem; line-height: 1.1; margin-top: 4px; }
 .experience-destination .experience-subtitle { color: var(--muted); font-family: 'DM Mono', monospace; font-size: 11px; font-style: normal; letter-spacing: .06em; text-transform: uppercase; margin-top: 2px; }
-.featured-experience { background: linear-gradient(120deg, rgba(7,20,37,.96), rgba(44,14,64,.72)); border: 1px solid var(--line); display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(260px, .85fr); margin-top: 12px; text-decoration: none; transition: border-color .2s ease, background .2s ease; }
+.experience-destination .experience-pending { color: var(--gold); margin-top: auto; padding-top: 24px; }
+.featured-experience { background: linear-gradient(120deg, rgba(7,20,37,.96), rgba(44,14,64,.72)); border: 1px solid var(--line); display: grid; grid-template-columns: 1fr; margin-top: 12px; text-decoration: none; transition: border-color .2s ease, background .2s ease; }
 .featured-experience:hover { background: var(--surface-raised); border-color: var(--red); }
-.featured-experience-image { min-height: 280px; overflow: hidden; position: relative; }
+.featured-experience-image { aspect-ratio: 12 / 7; min-height: 520px; overflow: hidden; position: relative; }
 .featured-experience-image img { object-fit: contain; transition: transform .5s ease; }
 .featured-experience:hover .featured-experience-image img { transform: scale(1.02); }
-.featured-experience-copy { display: flex; flex-direction: column; justify-content: center; padding: 32px; }
+.featured-experience-copy { border-top: 1px solid var(--line); display: flex; flex-direction: column; justify-content: center; min-height: 230px; padding: 42px; }
 .featured-experience-copy h3 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 3vw, 3rem); letter-spacing: -.05em; line-height: 1; margin: 16px 0 12px; }
 .featured-experience-copy p { color: var(--muted); line-height: 1.5; margin: 0; }
 .featured-experience-cta { color: var(--gold); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .1em; margin-top: 28px; text-transform: uppercase; }
@@ -229,7 +249,7 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.9rem, 4.3vw, 4.6rem); l
   border-color: var(--red);
   color: #ffffff;
 }
-.crypto-apps { padding-top: 0; }
+.coming-soon { padding-top: 0; }
 .crypto-app-grid { display: grid; gap: 12px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 28px; }
 .crypto-app { background: linear-gradient(145deg, rgba(12,29,49,.94), rgba(4,17,31,.9)); border: 1px solid var(--line); display: flex; flex-direction: column; min-height: 280px; overflow: hidden; padding: 26px; position: relative; transition: border-color .2s ease, transform .2s ease; }
 .crypto-app::before { background: radial-gradient(circle at 100% 0, rgba(255,79,200,.25), transparent 36%), linear-gradient(135deg, rgba(116,227,255,.08), transparent 42%); content: ''; inset: 0; pointer-events: none; position: absolute; }
@@ -308,7 +328,7 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.9rem, 4.3vw, 4.6rem); l
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .hero-copy, .hero-actions, .hero-readout, .hero-portal, .hero-portal::before, .hero-portal::after, .orbit-path, .sigil-ring { animation: none; }
+  .hero-copy, .hero-actions, .hero-readout, .hero-portal, .hero-portal::before, .hero-portal::after, .orbit-path, .sigil-ring, .sight-zone-orbit { animation: none; }
   .experience-destination, .crypto-app, .product-visual img { transition: none; }
 }
 
@@ -342,9 +362,10 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.9rem, 4.3vw, 4.6rem); l
   .primary-link, .secondary-link { font-size: 8px; min-height: 36px; padding: 0 10px; }
   .section-heading { align-items: start; flex-direction: column; gap: 8px; }
   .section-note { text-align: left; }
+  .sight-zone-portal { height: min(120vw, 520px); }
+  .sight-zone-interface { height: min(58vw, 240px); width: min(58vw, 240px); }
   .experience-destinations { grid-template-columns: 1fr; }
-  .featured-experience { grid-template-columns: 1fr; }
-  .featured-experience-image { min-height: 220px; }
+  .featured-experience-image { min-height: 0; }
   .featured-experience-copy { padding: 24px; }
   .crypto-app-grid { grid-template-columns: 1fr; }
   .quadraseer-panel { grid-template-columns: 1fr; }

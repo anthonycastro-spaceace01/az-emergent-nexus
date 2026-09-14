@@ -124,6 +124,9 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.9rem, 4.3vw, 4.6rem); l
 .hero-portal:hover, .hero-portal:focus-visible { box-shadow: 0 0 38px rgba(255,79,200,.85), 0 0 120px rgba(192,92,255,.4), inset 0 0 54px rgba(255,79,200,.38); }
 .hero-portal:hover .portal-interface, .hero-portal:focus-visible .portal-interface { background: rgba(54,10,78,.72); box-shadow: 0 0 58px rgba(255,79,200,.62), inset 0 0 38px rgba(255,255,255,.16); }
 .hero-portal:hover .portal-label, .hero-portal:focus-visible .portal-label { color: #fff; }
+.gateway-portal { height: min(72vw, 640px); margin: 28px auto 0; max-width: 640px; position: relative; width: min(72vw, 640px); }
+.gateway-portal .portal-interface { height: 42%; width: 42%; }
+.gateway-portal .portal-interface strong { font-size: clamp(14px, 2.8vw, 27px); }
 @keyframes sigil-breathe { 0%, 100% { margin-top: 0; } 50% { margin-top: -8px; } }
 @keyframes orbit-one { to { transform: translate(-50%, -50%) rotate(344deg); } }
 @keyframes orbit-two { to { transform: translate(-50%, -50%) rotate(408deg); } }
@@ -260,23 +263,6 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.9rem, 4.3vw, 4.6rem); l
 .crypto-app a, .crypto-app-pending { color: var(--gold); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .08em; margin-top: auto; padding-top: 28px; text-decoration: none; text-transform: uppercase; }
 .crypto-app a:hover { color: var(--gold-bright); }
 .crypto-app-pending { color: var(--muted); }
-.quadraseer { padding-top: 0; }
-.quadraseer-panel { background: linear-gradient(125deg, rgba(7,20,37,.96), rgba(24,12,45,.9)); border: 1px solid var(--line); display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(360px, .9fr); margin-top: 28px; min-height: 400px; overflow: hidden; }
-.quadraseer-copy { padding: 42px; }
-.quadraseer-copy h3 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -.05em; line-height: 1; margin: 18px 0; max-width: 620px; }
-.quadraseer-copy p { color: var(--muted); line-height: 1.65; margin: 0 0 16px; max-width: 650px; }
-.quadraseer-pending { color: var(--gold); display: inline-block; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .1em; margin-top: 20px; text-transform: uppercase; }
-.quadraseer-map { background: radial-gradient(circle at center, rgba(255,79,200,.28), transparent 30%), linear-gradient(rgba(116,227,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(116,227,255,.05) 1px, transparent 1px); background-size: auto, 36px 36px, 36px 36px; min-height: 400px; position: relative; }
-.quadraseer-map::before, .quadraseer-map::after { border: 1px solid rgba(231,184,75,.36); content: ''; height: 58%; left: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%) rotate(45deg); width: 58%; }
-.quadraseer-map::after { border-color: rgba(168,117,255,.5); height: 28%; width: 28%; }
-.quadraseer-core, .quadraseer-node { align-items: center; background: var(--surface-raised); border: 1px solid var(--line); display: flex; font-family: 'DM Mono', monospace; font-size: 10px; justify-content: center; letter-spacing: .07em; position: absolute; text-align: center; text-transform: uppercase; z-index: 1; }
-.quadraseer-core { border-color: var(--gold); color: var(--gold-bright); height: 96px; left: 50%; line-height: 1.4; top: 50%; transform: translate(-50%, -50%); width: 96px; }
-.quadraseer-core br { display: block; }
-.quadraseer-node { color: var(--ink); min-height: 34px; padding: 0 10px; }
-.quadraseer-node-hrm { left: 16%; top: 18%; }
-.quadraseer-node-phase { right: 12%; top: 25%; }
-.quadraseer-node-vault { bottom: 18%; right: 17%; }
-.quadraseer-node-local { bottom: 24%; left: 11%; }
 .product-grid { display: grid; gap: 20px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 42px; }
 .product-card { background: linear-gradient(145deg, rgba(12,29,49,.94), rgba(4,17,31,.94)); border: 1px solid var(--line); min-height: 540px; overflow: hidden; padding: 12px; position: relative; }
 .product-card::before { content: ''; inset: 0; opacity: .65; pointer-events: none; position: absolute; }
@@ -362,6 +348,7 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.9rem, 4.3vw, 4.6rem); l
   .primary-link, .secondary-link { font-size: 8px; min-height: 36px; padding: 0 10px; }
   .section-heading { align-items: start; flex-direction: column; gap: 8px; }
   .section-note { text-align: left; }
+  .gateway-portal { height: 92vw; max-height: 430px; max-width: 430px; width: 92vw; }
   .sight-zone-portal { height: min(120vw, 520px); }
   .sight-zone-interface { height: min(58vw, 240px); width: min(58vw, 240px); }
   .experience-destinations { grid-template-columns: 1fr; }

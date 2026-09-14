@@ -100,7 +100,7 @@ export default async function HomePage() {
           </a>
           <div className="hero-actions">
             <a className="primary-link" href="#systems">Explore systems</a>
-            <a className="secondary-link" href="#mvp-blueprinting">MVP Blueprinting</a>
+            <a className="secondary-link" href="#transcendental-gateways">Transcendental Gateways</a>
             <a className="secondary-link" href="#coming-soon">Coming soon</a>
             <a className="secondary-link" href="#access">Access protocol</a>
           </div>
@@ -117,34 +117,41 @@ export default async function HomePage() {
           <div className="signal"><strong>03 / Enter</strong><span>Open your browser-based experience and begin.</span></div>
         </div>
 
-        <section className="section" id="mvp-blueprinting">
+        <section className="section gateway-section" id="transcendental-gateways">
           <div className="section-heading">
             <div>
-              <span className="section-label">Consulting / architecture mapping</span>
-              <h2 className="section-title">MVP Blueprinting</h2>
+              <span className="section-label">Nexus interface / gateway signal</span>
+              <h2 className="section-title">Transcendental Gateways</h2>
             </div>
-            <p className="section-note">A premium advisory package that turns a concept into a decision-ready product roadmap.</p>
+            <p className="section-note">A portal for crossing beyond the familiar and entering the next layer of perception.</p>
           </div>
 
-          <article className="quadraseer-panel">
-            <div className="quadraseer-copy">
-              <span className="product-index">Fixed-fee advisory</span>
-              <h3>Build confidence before you spend on engineering.</h3>
-              <p>
-                Many founders have an app idea but no technical roadmap. This consulting engagement is designed for that exact moment: you bring the vision, and I map the system before a single line of code is written.
-              </p>
-              <p>
-                I conduct a focused discovery process, then deliver a comprehensive Build Document outlining the recommended tech stack, database architecture, core workflows, and basic wireframes so you can move forward with clarity instead of blind development costs.
-              </p>
-            </div>
-            <div className="quadraseer-map" aria-hidden="true">
-              <span className="quadraseer-core">Build<br />Plan</span>
-              <span className="quadraseer-node quadraseer-node-hrm">Tech Stack</span>
-              <span className="quadraseer-node quadraseer-node-phase">Data Model</span>
-              <span className="quadraseer-node quadraseer-node-vault">Wireframes</span>
-              <span className="quadraseer-node quadraseer-node-local">Investor Confidence</span>
-            </div>
-          </article>
+          <a
+            className="hero-portal gateway-portal"
+            href="https://transcendentalgateways.site"
+            rel="noreferrer"
+            target="_blank"
+            aria-label="Enter Transcendental Gateways"
+          >
+            <span className="portal-stars" />
+            <span className="portal-glow" />
+            <span className="sigil-ring sigil-ring-outer" />
+            <span className="sigil-ring sigil-ring-middle" />
+            <span className="sigil-ring sigil-ring-inner" />
+            <span className="sigil-cross sigil-cross-horizontal" />
+            <span className="sigil-cross sigil-cross-vertical" />
+            <span className="sigil-diamond" />
+            <span className="sigil-petal sigil-petal-one" />
+            <span className="sigil-petal sigil-petal-two" />
+            <span className="sigil-petal sigil-petal-three" />
+            <span className="sigil-petal sigil-petal-four" />
+            <span className="portal-interface">
+              <span className="portal-eyebrow">Nexus Interface</span>
+              <strong>Transcendental<br />Gateways</strong>
+              <span className="portal-status">Ready / Enter below</span>
+            </span>
+            <span className="portal-label">Enter Gateway</span>
+          </a>
         </section>
 
         <section className="section" id="systems">

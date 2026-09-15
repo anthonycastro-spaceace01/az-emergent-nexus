@@ -125,8 +125,8 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.9rem, 4.3vw, 4.6rem); l
 .hero-portal:hover .portal-interface, .hero-portal:focus-visible .portal-interface { background: rgba(54,10,78,.72); box-shadow: 0 0 58px rgba(255,79,200,.62), inset 0 0 38px rgba(255,255,255,.16); }
 .hero-portal:hover .portal-label, .hero-portal:focus-visible .portal-label { color: #fff; }
 .gateway-portal { height: min(72vw, 640px); margin: 28px auto 0; max-width: 640px; position: relative; width: min(72vw, 640px); }
-.gateway-portal .portal-interface { height: 42%; width: 42%; }
-.gateway-portal .portal-interface strong { font-size: clamp(14px, 2.8vw, 27px); }
+.gateway-portal .portal-interface { height: 48%; width: 48%; }
+.gateway-portal .portal-interface strong { font-size: clamp(13px, 2.4vw, 24px); line-height: 1.05; }
 @keyframes sigil-breathe { 0%, 100% { margin-top: 0; } 50% { margin-top: -8px; } }
 @keyframes orbit-one { to { transform: translate(-50%, -50%) rotate(344deg); } }
 @keyframes orbit-two { to { transform: translate(-50%, -50%) rotate(408deg); } }
@@ -149,7 +149,7 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.9rem, 4.3vw, 4.6rem); l
 .section-heading { align-items: end; border-top: 1px solid var(--line); display: flex; gap: 24px; justify-content: space-between; padding-top: 22px; }
 .section-label { color: var(--cyan); font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
 .section-title { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 4rem); letter-spacing: -.05em; line-height: 1; margin: 10px 0 0; }
-.section-note { color: var(--muted); font-size: 14px; line-height: 1.5; max-width: 270px; text-align: right; }
+.section-note { color: var(--muted); font-size: 14px; line-height: 1.5; margin: 0; max-width: 270px; text-align: right; }
 .sight-zone-portal { align-items: center; background: radial-gradient(circle, rgba(116,227,255,.18) 0 8%, rgba(255,79,200,.15) 22%, rgba(7,20,37,.76) 48%, rgba(2,13,26,.96) 72%); border: 1px solid rgba(116,227,255,.38); display: flex; height: min(72vw, 640px); justify-content: center; margin-top: 28px; overflow: hidden; position: relative; }
 .sight-zone-portal::before, .sight-zone-portal::after { border: 1px solid rgba(255,79,200,.5); content: ''; height: 58%; position: absolute; transform: rotate(45deg); width: 58%; }
 .sight-zone-portal::after { border-color: rgba(116,227,255,.42); height: 42%; transform: rotate(22.5deg); width: 42%; }

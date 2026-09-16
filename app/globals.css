@@ -125,8 +125,9 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.9rem, 4.3vw, 4.6rem); l
 .hero-portal:hover .portal-interface, .hero-portal:focus-visible .portal-interface { background: rgba(54,10,78,.72); box-shadow: 0 0 58px rgba(255,79,200,.62), inset 0 0 38px rgba(255,255,255,.16); }
 .hero-portal:hover .portal-label, .hero-portal:focus-visible .portal-label { color: #fff; }
 .gateway-portal { height: min(72vw, 640px); margin: 28px auto 0; max-width: 640px; position: relative; width: min(72vw, 640px); }
-.gateway-portal .portal-interface { height: 48%; width: 48%; }
-.gateway-portal .portal-interface strong { font-size: clamp(13px, 2.4vw, 24px); line-height: 1.05; }
+.gateway-portal .portal-interface { height: 48%; padding: 0 10%; width: 48%; }
+.gateway-portal .portal-interface strong { font-size: clamp(13px, 2.4vw, 24px); line-height: 1.05; max-width: 100%; min-width: 0; overflow-wrap: break-word; }
+.gateway-portal .portal-label { max-width: calc(100% - 24px); text-align: center; white-space: normal; }
 @keyframes sigil-breathe { 0%, 100% { margin-top: 0; } 50% { margin-top: -8px; } }
 @keyframes orbit-one { to { transform: translate(-50%, -50%) rotate(344deg); } }
 @keyframes orbit-two { to { transform: translate(-50%, -50%) rotate(408deg); } }
@@ -186,6 +187,28 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.9rem, 4.3vw, 4.6rem); l
 .featured-experience-copy h3 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 3vw, 3rem); letter-spacing: -.05em; line-height: 1; margin: 16px 0 12px; }
 .featured-experience-copy p { color: var(--muted); line-height: 1.5; margin: 0; }
 .featured-experience-cta { color: var(--gold); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .1em; margin-top: 28px; text-transform: uppercase; }
+
+.seers-console { padding-top: 0; }
+.console-intro { align-items: center; border-bottom: 1px solid var(--line); border-left: 1px solid var(--gold); display: flex; gap: 18px; margin-top: 28px; padding: 14px 18px; }
+.console-mark { color: var(--gold-bright); font-family: 'Syne', sans-serif; font-size: 26px; line-height: 1; }
+.console-intro p { color: var(--muted); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .05em; margin: 0; text-transform: uppercase; }
+.console-status { color: var(--cyan); font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .12em; margin-left: auto; text-transform: uppercase; }
+.console-status::before { background: var(--cyan); border-radius: 50%; box-shadow: 0 0 8px var(--cyan); content: ''; display: inline-block; height: 5px; margin: 0 8px 1px 0; width: 5px; }
+.paper-grid { display: grid; gap: 12px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 12px; }
+.paper-card { background: linear-gradient(145deg, rgba(12,29,49,.96), rgba(4,17,31,.88)); border: 1px solid var(--line); display: flex; flex-direction: column; min-height: 310px; padding: 24px; position: relative; transition: border-color .2s ease, transform .2s ease; }
+.paper-card::after { border: 1px solid rgba(116,227,255,.22); content: ''; height: 90px; position: absolute; right: -28px; top: -28px; transform: rotate(45deg); width: 90px; }
+.paper-card:hover { border-color: var(--cyan); transform: translateY(-3px); }
+.paper-card-top { align-items: center; display: flex; justify-content: space-between; }
+.paper-index, .paper-status { color: var(--gold); font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.paper-status { color: var(--muted); }
+.paper-card h3 { font-family: 'Syne', sans-serif; font-size: clamp(1.45rem, 2.5vw, 2.25rem); letter-spacing: -.04em; line-height: 1.05; margin: 42px 0 10px; max-width: 300px; }
+.paper-author-image { aspect-ratio: 1.45 / 1; margin: 6px 0 16px; overflow: hidden; position: relative; }
+.paper-author-image img { object-fit: cover; object-position: center 28%; }
+.paper-authors { color: var(--cyan); font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .1em; margin: 0; text-transform: uppercase; }
+.paper-description { color: var(--muted); line-height: 1.5; margin: 18px 0 0; }
+.paper-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 28px; }
+.paper-links a { align-items: center; border: 1px solid var(--line); color: var(--gold-bright); display: inline-flex; font-family: 'DM Mono', monospace; font-size: 10px; gap: 8px; letter-spacing: .08em; padding: 9px 10px; text-decoration: none; text-transform: uppercase; transition: border-color .2s ease, color .2s ease; }
+.paper-links a:hover { border-color: var(--gold); color: #fff; }
 
 .experience-actions {
   align-items: center;
@@ -355,6 +378,9 @@ h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.9rem, 4.3vw, 4.6rem); l
   .featured-experience-image { min-height: 0; }
   .featured-experience-copy { padding: 24px; }
   .crypto-app-grid { grid-template-columns: 1fr; }
+  .console-intro { align-items: flex-start; flex-wrap: wrap; }
+  .console-status { margin-left: 0; width: 100%; }
+  .paper-grid { grid-template-columns: 1fr; }
   .product-grid { grid-template-columns: 1fr; }
   .product-card { min-height: 0; }
   .cart-page { padding-left: 20px; padding-right: 20px; padding-top: 70px; }

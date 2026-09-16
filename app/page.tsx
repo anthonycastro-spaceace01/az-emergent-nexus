@@ -39,6 +39,52 @@ const cryptoApps = [
   },
 ];
 
+type PhysicsPaper = {
+  index: string;
+  title: string;
+  authors: string;
+  description: string;
+  image?: string;
+  links: { label: string; href: string }[];
+};
+
+const physicsPapers: PhysicsPaper[] = [
+  {
+    index: "01",
+    title: "Shared physics research",
+    authors: "Anthony Castro + Abby Lane",
+    description: "A growing archive of papers exploring matter, perception, and the structures that connect them.",
+    links: [
+      { label: "Zenodo", href: "https://zenodo.org/search?q=Anthony%20Castro%20Abby%20Lane" },
+      { label: "arXiv", href: "https://arxiv.org/search/?query=Anthony+Castro+Abby+Lane&searchtype=all" },
+      { label: "GitHub repos", href: "https://github.com/search?q=Anthony+Castro+Abby+Lane&type=repositories" },
+    ],
+  },
+  {
+    index: "02",
+    title: "Anthony Rene Castro",
+    authors: "Independent research trail",
+    description: "Follow the papers, preprints, and working repositories behind the Nexus line of inquiry.",
+    links: [
+      { label: "Zenodo", href: "https://zenodo.org/search?q=Anthony%20Castro" },
+      { label: "arXiv", href: "https://arxiv.org/search/?query=Anthony+Castro&searchtype=all" },
+      { label: "GitHub repos", href: "https://github.com/search?q=Anthony+Castro&type=repositories" },
+    ],
+  },
+  {
+    index: "03",
+    title: "Abby Lane",
+    authors: "Independent research trail",
+    description: "A parallel index for Abby Lane's papers, preprints, and experimental code.",
+    image: "/public.abby-lane.jpg",
+    links: [
+      { label: "Zenodo", href: "https://zenodo.org/search?q=Abby%20Lane" },
+      { label: "arXiv", href: "https://arxiv.org/search/?query=Abby+Lane&searchtype=all" },
+      { label: "GitHub repos", href: "https://github.com/search?q=Abby+Lane&type=repositories" },
+    ],
+  },
+] as const;
+
 export default async function HomePage() {
   let products: Product[] = [];
 
@@ -236,6 +282,49 @@ export default async function HomePage() {
                 ))}
               </div>
             )}
+          </div>
+        </section>
+
+        <section className="section seers-console" id="seers-console">
+          <div className="section-heading">
+            <div>
+              <span className="section-label">Research archive / active signal</span>
+              <h2 className="section-title">The Seer&apos;s Console</h2>
+            </div>
+            <p className="section-note">Physics papers, preprints, and the code that lets the questions keep moving.</p>
+          </div>
+
+          <div className="console-intro">
+            <span className="console-mark" aria-hidden="true">...</span>
+            <p>Anthony Castro and Abby Lane / a shared observatory for the work behind the signal.</p>
+            <span className="console-status">Index / live</span>
+          </div>
+
+          <div className="paper-grid" aria-label="Physics paper archive">
+            {physicsPapers.map((paper) => (
+              <article className="paper-card" key={paper.index}>
+                <div className="paper-card-top">
+                  <span className="paper-index">Paper / {paper.index}</span>
+                  <span className="paper-status">Archive link</span>
+                </div>
+                <h3>{paper.title}</h3>
+                {paper.image && (
+                  <div className="paper-author-image">
+                    <Image src={paper.image} alt={`${paper.title} portrait`} fill sizes="(max-width: 720px) 100vw, 33vw" />
+                  </div>
+                )}
+                <p className="paper-authors">{paper.authors}</p>
+                <p className="paper-description">{paper.description}</p>
+                <div className="paper-links">
+                  {paper.links.map((link) => (
+                    <a href={link.href} key={link.label} rel="noreferrer" target="_blank">
+                      <span>{link.label}</span>
+                      <span aria-hidden="true">-&gt;</span>
+                    </a>
+                  ))}
+                </div>
+              </article>
+            ))}
           </div>
         </section>
 
